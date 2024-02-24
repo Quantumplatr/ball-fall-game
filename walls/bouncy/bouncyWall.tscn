@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyvo3bc1o88or"]
+
+[ext_resource type="Script" path="res://walls/bouncy/bouncyWall.gd" id="1_74gfw"]
+[ext_resource type="PhysicsMaterial" uid="uid://b2lx0mn5h4cf8" path="res://walls/bouncy/bouncyPhysicsMaterial.tres" id="1_tl423"]
+[ext_resource type="Texture2D" uid="uid://b6hq1asafakhc" path="res://rectangle.png" id="2_pcjkw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jowy4"]
+
+[node name="Bouncy Wall" type="StaticBody2D"]
+physics_material_override = ExtResource("1_tl423")
+script = ExtResource("1_74gfw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.270588, 0.721569, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_pcjkw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jowy4")

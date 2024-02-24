@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1pbp4m67l6ua"]
+
+[ext_resource type="Script" path="res://walls/bouncy/bouncy_circle.gd" id="1_6dj0l"]
+[ext_resource type="PhysicsMaterial" uid="uid://b2lx0mn5h4cf8" path="res://walls/bouncy/bouncyPhysicsMaterial.tres" id="1_wfywu"]
+[ext_resource type="Texture2D" uid="uid://cs64xko6qb2ht" path="res://ball/ball.png" id="2_01k3v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0mor"]
+
+[node name="bouncy_circle_wall" type="StaticBody2D"]
+physics_material_override = ExtResource("1_wfywu")
+script = ExtResource("1_6dj0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v0mor")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.682353, 0, 0.458824, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_01k3v")

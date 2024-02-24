@@ -41,4 +41,3 @@ func _on_play_again_btn_pressed():
 
 func _on_level_select_btn_pressed():
 	SceneManager.go_to_scene("res://menus/level_select/level_select.tscn")
-	print('huh')

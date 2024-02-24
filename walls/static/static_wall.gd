@@ -1,4 +1,5 @@
 @tool
+class_name StaticWall
 extends Wall
 
 @export_range(-180,180,5) var angle := 0.0:

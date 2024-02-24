@@ -182,6 +182,7 @@ text = "Level Select"
 
 [node name="PauseMenu" type="CenterContainer" parent="UI/Margins"]
 process_mode = 3
+visible = false
 layout_mode = 2
 script = ExtResource("10_hsatg")
 

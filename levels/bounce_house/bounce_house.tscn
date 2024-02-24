@@ -1,0 +1,338 @@
+[gd_scene load_steps=7 format=3 uid="uid://51owarec0mwl"]
+
+[ext_resource type="PackedScene" uid="uid://cuojibjy6vwck" path="res://levels/base_level.tscn" id="1_poljl"]
+[ext_resource type="PackedScene" uid="uid://ojmsdynfnj5g" path="res://walls/static/static_wall.tscn" id="2_353oa"]
+[ext_resource type="PackedScene" uid="uid://cyvo3bc1o88or" path="res://walls/bouncy/bouncyWall.tscn" id="2_xcb1t"]
+[ext_resource type="PackedScene" uid="uid://c1pbp4m67l6ua" path="res://walls/bouncy/bouncy_circle.tscn" id="4_72376"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7ai1"]
+size = Vector2(200, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd32q"]
+size = Vector2(645, 280)
+
+[node name="bounce_house" instance=ExtResource("1_poljl")]
+
+[node name="EndZone" parent="." index="0"]
+polygon = PackedVector2Array(-320, 2360, 320, 2360, 320, 2640, -320, 2640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start" index="0"]
+position = Vector2(0, -100)
+shape = SubResource("RectangleShape2D_r7ai1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End" index="0"]
+position = Vector2(-2.5, 2500)
+shape = SubResource("RectangleShape2D_sd32q")
+debug_color = Color(0, 0.635294, 0.431373, 0.419608)
+
+[node name="StaticWall" parent="Walls/Static" index="0" instance=ExtResource("2_353oa")]
+position = Vector2(-150, 40)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall3" parent="Walls/Static" index="1" instance=ExtResource("2_353oa")]
+position = Vector2(-330, 440)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall7" parent="Walls/Static" index="2" instance=ExtResource("2_353oa")]
+position = Vector2(-330, 840)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall10" parent="Walls/Static" index="3" instance=ExtResource("2_353oa")]
+position = Vector2(-330, 1240)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall8" parent="Walls/Static" index="4" instance=ExtResource("2_353oa")]
+position = Vector2(330, 840)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall9" parent="Walls/Static" index="5" instance=ExtResource("2_353oa")]
+position = Vector2(330, 1240)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall11" parent="Walls/Static" index="6" instance=ExtResource("2_353oa")]
+position = Vector2(-330, 1640)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall12" parent="Walls/Static" index="7" instance=ExtResource("2_353oa")]
+position = Vector2(330, 1640)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall13" parent="Walls/Static" index="8" instance=ExtResource("2_353oa")]
+position = Vector2(-330, 1640)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall14" parent="Walls/Static" index="9" instance=ExtResource("2_353oa")]
+position = Vector2(330, 1640)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall15" parent="Walls/Static" index="10" instance=ExtResource("2_353oa")]
+position = Vector2(-330, 2040)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall17" parent="Walls/Static" index="11" instance=ExtResource("2_353oa")]
+position = Vector2(-330, 2440)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall16" parent="Walls/Static" index="12" instance=ExtResource("2_353oa")]
+position = Vector2(330, 2040)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall18" parent="Walls/Static" index="13" instance=ExtResource("2_353oa")]
+position = Vector2(330, 2440)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall19" parent="Walls/Static" index="14" instance=ExtResource("2_353oa")]
+position = Vector2(3.05176e-05, 2650)
+scale = Vector2(34, 1)
+size = Vector2(34, 1)
+
+[node name="StaticWall5" parent="Walls/Static" index="15" instance=ExtResource("2_353oa")]
+position = Vector2(-240, 230)
+rotation = 1.5708
+scale = Vector2(1, 10)
+angle = 90.0
+size = Vector2(1, 10)
+
+[node name="StaticWall6" parent="Walls/Static" index="16" instance=ExtResource("2_353oa")]
+position = Vector2(240, 230)
+rotation = 1.5708
+scale = Vector2(1, 10)
+angle = 90.0
+size = Vector2(1, 10)
+
+[node name="StaticWall2" parent="Walls/Static" index="17" instance=ExtResource("2_353oa")]
+position = Vector2(150, 40)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="StaticWall4" parent="Walls/Static" index="18" instance=ExtResource("2_353oa")]
+position = Vector2(330, 440)
+scale = Vector2(1, 20)
+size = Vector2(1, 20)
+
+[node name="Bouncy Wall" parent="Walls/Bouncy" index="0" instance=ExtResource("2_xcb1t")]
+position = Vector2(140, 300)
+rotation = -0.785398
+scale = Vector2(4, 1)
+angle = -45.0
+size = Vector2(4, 1)
+
+[node name="Bouncy Wall6" parent="Walls/Bouncy" index="1" instance=ExtResource("2_xcb1t")]
+position = Vector2(103, -3.27826e-06)
+rotation = -0.174533
+scale = Vector2(4, 1)
+angle = -10.0
+size = Vector2(4, 1)
+
+[node name="Bouncy Wall10" parent="Walls/Bouncy" index="2" instance=ExtResource("2_xcb1t")]
+position = Vector2(51, 80)
+rotation = -0.261799
+scale = Vector2(3, 1)
+angle = -15.0
+size = Vector2(3, 1)
+
+[node name="Bouncy Wall7" parent="Walls/Bouncy" index="3" instance=ExtResource("2_xcb1t")]
+position = Vector2(34, 410)
+rotation = 0.349066
+scale = Vector2(4, 1)
+angle = 20.0
+size = Vector2(4, 1)
+
+[node name="Bouncy Wall13" parent="Walls/Bouncy" index="4" instance=ExtResource("2_xcb1t")]
+position = Vector2(-34, 410)
+rotation = -0.349066
+scale = Vector2(4, 1)
+angle = -20.0
+size = Vector2(4, 1)
+
+[node name="Bouncy Wall8" parent="Walls/Bouncy" index="5" instance=ExtResource("2_xcb1t")]
+position = Vector2(-102, -2.26498e-06)
+rotation = 0.174533
+scale = Vector2(4, 1)
+angle = 10.0
+size = Vector2(4, 1)
+
+[node name="Bouncy Wall9" parent="Walls/Bouncy" index="6" instance=ExtResource("2_xcb1t")]
+position = Vector2(-51, 80)
+rotation = 0.261799
+scale = Vector2(3, 1)
+angle = 15.0
+size = Vector2(3, 1)
+
+[node name="Bouncy Wall2" parent="Walls/Bouncy" index="7" instance=ExtResource("2_xcb1t")]
+position = Vector2(-150, 300)
+rotation = 0.785398
+scale = Vector2(4, 1)
+angle = 45.0
+size = Vector2(4, 1)
+
+[node name="Bouncy Wall3" parent="Walls/Bouncy" index="8" instance=ExtResource("2_xcb1t")]
+position = Vector2(0, 590)
+scale = Vector2(10, 1)
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall11" parent="Walls/Bouncy" index="9" instance=ExtResource("2_xcb1t")]
+position = Vector2(220, 560)
+rotation = -0.785398
+scale = Vector2(10, 1)
+angle = -45.0
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall12" parent="Walls/Bouncy" index="10" instance=ExtResource("2_xcb1t")]
+position = Vector2(-219, 580)
+rotation = 0.785398
+scale = Vector2(10, 1)
+angle = 45.0
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall14" parent="Walls/Bouncy" index="11" instance=ExtResource("2_xcb1t")]
+position = Vector2(-310, 680)
+rotation = 0.785398
+scale = Vector2(10, 1)
+angle = 45.0
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall15" parent="Walls/Bouncy" index="12" instance=ExtResource("2_xcb1t")]
+position = Vector2(-310, 930)
+rotation = 0.785398
+scale = Vector2(10, 1)
+angle = 45.0
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall18" parent="Walls/Bouncy" index="13" instance=ExtResource("2_xcb1t")]
+position = Vector2(64.0001, 1190)
+rotation = 0.785398
+scale = Vector2(10, 1)
+angle = 45.0
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall20" parent="Walls/Bouncy" index="14" instance=ExtResource("2_xcb1t")]
+position = Vector2(-220, 1340)
+rotation = 0.785398
+scale = Vector2(15, 1)
+angle = 45.0
+size = Vector2(15, 1)
+
+[node name="Bouncy Wall16" parent="Walls/Bouncy" index="15" instance=ExtResource("2_xcb1t")]
+position = Vector2(310, 890)
+rotation = -0.785398
+scale = Vector2(10, 1)
+angle = -45.0
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall19" parent="Walls/Bouncy" index="16" instance=ExtResource("2_xcb1t")]
+position = Vector2(-63.0001, 1190)
+rotation = -0.785398
+scale = Vector2(10, 1)
+angle = -45.0
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall21" parent="Walls/Bouncy" index="17" instance=ExtResource("2_xcb1t")]
+position = Vector2(150, 1410)
+rotation = -0.785398
+scale = Vector2(25, 1)
+angle = -45.0
+size = Vector2(25, 1)
+
+[node name="Bouncy Wall22" parent="Walls/Bouncy" index="18" instance=ExtResource("2_xcb1t")]
+position = Vector2(150, 1810)
+rotation = -0.785398
+scale = Vector2(25, 1)
+angle = -45.0
+size = Vector2(25, 1)
+
+[node name="Bouncy Wall24" parent="Walls/Bouncy" index="19" instance=ExtResource("2_xcb1t")]
+position = Vector2(-180, 2270)
+rotation = 0.174533
+scale = Vector2(16, 1)
+angle = 10.0
+size = Vector2(16, 1)
+
+[node name="Bouncy Wall25" parent="Walls/Bouncy" index="20" instance=ExtResource("2_xcb1t")]
+position = Vector2(180, 2270)
+rotation = -0.174533
+scale = Vector2(16, 1)
+angle = -10.0
+size = Vector2(16, 1)
+
+[node name="Bouncy Wall23" parent="Walls/Bouncy" index="21" instance=ExtResource("2_xcb1t")]
+position = Vector2(-150, 1610)
+rotation = 0.785398
+scale = Vector2(25, 1)
+angle = 45.0
+size = Vector2(25, 1)
+
+[node name="Bouncy Wall17" parent="Walls/Bouncy" index="22" instance=ExtResource("2_xcb1t")]
+position = Vector2(310, 680)
+rotation = -0.785398
+scale = Vector2(10, 1)
+angle = -45.0
+size = Vector2(10, 1)
+
+[node name="Bouncy Wall4" parent="Walls/Bouncy" index="23" instance=ExtResource("2_xcb1t")]
+position = Vector2(22, 150)
+rotation = 0.785398
+scale = Vector2(4, 1)
+angle = 45.0
+size = Vector2(4, 1)
+
+[node name="Bouncy Wall5" parent="Walls/Bouncy" index="24" instance=ExtResource("2_xcb1t")]
+position = Vector2(-21, 150)
+rotation = -0.785398
+scale = Vector2(4, 1)
+angle = -45.0
+size = Vector2(4, 1)
+
+[node name="bouncy_circle_wall" parent="Walls/Bouncy" index="25" instance=ExtResource("4_72376")]
+position = Vector2(0, 270)
+scale = Vector2(7, 7)
+size = Vector2(7, 7)
+
+[node name="bouncy_circle_wall2" parent="Walls/Bouncy" index="26" instance=ExtResource("4_72376")]
+position = Vector2(0, 720)
+scale = Vector2(7, 7)
+size = Vector2(7, 7)
+
+[node name="bouncy_circle_wall3" parent="Walls/Bouncy" index="27" instance=ExtResource("4_72376")]
+position = Vector2(-150, 870)
+scale = Vector2(7, 7)
+size = Vector2(7, 7)
+
+[node name="bouncy_circle_wall4" parent="Walls/Bouncy" index="28" instance=ExtResource("4_72376")]
+position = Vector2(150, 870)
+scale = Vector2(7, 7)
+size = Vector2(7, 7)
+
+[node name="bouncy_circle_wall6" parent="Walls/Bouncy" index="29" instance=ExtResource("4_72376")]
+position = Vector2(190, 1060)
+scale = Vector2(7, 7)
+size = Vector2(7, 7)
+
+[node name="bouncy_circle_wall8" parent="Walls/Bouncy" index="30" instance=ExtResource("4_72376")]
+position = Vector2(-330, 1960)
+scale = Vector2(20, 20)
+size = Vector2(20, 20)
+
+[node name="bouncy_circle_wall7" parent="Walls/Bouncy" index="31" instance=ExtResource("4_72376")]
+position = Vector2(-160, 1080)
+scale = Vector2(7, 7)
+size = Vector2(7, 7)
+
+[node name="bouncy_circle_wall5" parent="Walls/Bouncy" index="32" instance=ExtResource("4_72376")]
+position = Vector2(1.52588e-05, 990)
+scale = Vector2(7, 7)
+size = Vector2(7, 7)
