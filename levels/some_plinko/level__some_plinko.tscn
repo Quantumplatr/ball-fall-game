@@ -1,0 +1,2480 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck5lcfuyt3ov"]
+
+[ext_resource type="PackedScene" uid="uid://cuojibjy6vwck" path="res://levels/base_level.tscn" id="1_30d5r"]
+[ext_resource type="PackedScene" uid="uid://ojmsdynfnj5g" path="res://walls/static/static_wall.tscn" id="1_kqvht"]
+[ext_resource type="PackedScene" uid="uid://c41dptd8s70yf" path="res://walls/rotating/rotating_wall.tscn" id="2_77qt8"]
+[ext_resource type="PackedScene" uid="uid://ctmis2wrcqb4l" path="res://walls/circle/circle_wall.tscn" id="3_v3ysa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t63pw"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bab15"]
+size = Vector2(640, 210)
+
+[node name="SomePlinko" instance=ExtResource("1_30d5r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start" index="0"]
+position = Vector2(0, -150)
+shape = SubResource("RectangleShape2D_t63pw")
+
+[node name="Shape" type="CollisionShape2D" parent="End" index="0"]
+position = Vector2(0, 3595)
+shape = SubResource("RectangleShape2D_bab15")
+debug_color = Color(0, 0.639216, 0.388235, 0.419608)
+
+[node name="Fill" type="Polygon2D" parent="End" index="1"]
+z_index = -2
+color = Color(0, 0.67451, 0.419608, 0.313726)
+polygon = PackedVector2Array(-320, 3490, 320, 3490, 320, 3700, -320, 3700)
+
+[node name="CircleWall" parent="Walls/Circles" index="0" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 650)
+
+[node name="CircleWall2" parent="Walls/Circles" index="1" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 700)
+
+[node name="CircleWall3" parent="Walls/Circles" index="2" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 700)
+
+[node name="CircleWall20" parent="Walls/Circles" index="3" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 900)
+
+[node name="CircleWall21" parent="Walls/Circles" index="4" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 900)
+
+[node name="CircleWall4" parent="Walls/Circles" index="5" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 750)
+
+[node name="CircleWall5" parent="Walls/Circles" index="6" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 750)
+
+[node name="CircleWall7" parent="Walls/Circles" index="7" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 800)
+
+[node name="CircleWall8" parent="Walls/Circles" index="8" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 800)
+
+[node name="CircleWall9" parent="Walls/Circles" index="9" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 800)
+
+[node name="CircleWall10" parent="Walls/Circles" index="10" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 800)
+
+[node name="CircleWall16" parent="Walls/Circles" index="11" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 900)
+
+[node name="CircleWall17" parent="Walls/Circles" index="12" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 900)
+
+[node name="CircleWall18" parent="Walls/Circles" index="13" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 900)
+
+[node name="CircleWall19" parent="Walls/Circles" index="14" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 900)
+
+[node name="CircleWall15" parent="Walls/Circles" index="15" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 850)
+
+[node name="CircleWall11" parent="Walls/Circles" index="16" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 850)
+
+[node name="CircleWall12" parent="Walls/Circles" index="17" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 850)
+
+[node name="CircleWall13" parent="Walls/Circles" index="18" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 850)
+
+[node name="CircleWall14" parent="Walls/Circles" index="19" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 850)
+
+[node name="CircleWall6" parent="Walls/Circles" index="20" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 750)
+
+[node name="CircleWall44" parent="Walls/Circles" index="21" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 750)
+
+[node name="CircleWall45" parent="Walls/Circles" index="22" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 750)
+
+[node name="CircleWall46" parent="Walls/Circles" index="23" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 800)
+
+[node name="CircleWall47" parent="Walls/Circles" index="24" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 800)
+
+[node name="CircleWall48" parent="Walls/Circles" index="25" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 800)
+
+[node name="CircleWall54" parent="Walls/Circles" index="26" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 850)
+
+[node name="CircleWall60" parent="Walls/Circles" index="27" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 850)
+
+[node name="CircleWall57" parent="Walls/Circles" index="28" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 850)
+
+[node name="CircleWall58" parent="Walls/Circles" index="29" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 850)
+
+[node name="CircleWall59" parent="Walls/Circles" index="30" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 850)
+
+[node name="CircleWall49" parent="Walls/Circles" index="31" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 750)
+
+[node name="CircleWall38" parent="Walls/Circles" index="32" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 750)
+
+[node name="CircleWall39" parent="Walls/Circles" index="33" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 750)
+
+[node name="CircleWall40" parent="Walls/Circles" index="34" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 800)
+
+[node name="CircleWall41" parent="Walls/Circles" index="35" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 800)
+
+[node name="CircleWall42" parent="Walls/Circles" index="36" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 800)
+
+[node name="CircleWall43" parent="Walls/Circles" index="37" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 750)
+
+[node name="CircleWall36" parent="Walls/Circles" index="38" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 650)
+
+[node name="CircleWall37" parent="Walls/Circles" index="39" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 650)
+
+[node name="CircleWall22" parent="Walls/Circles" index="40" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 650)
+
+[node name="CircleWall23" parent="Walls/Circles" index="41" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 650)
+
+[node name="CircleWall24" parent="Walls/Circles" index="42" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 700)
+
+[node name="CircleWall25" parent="Walls/Circles" index="43" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 700)
+
+[node name="CircleWall26" parent="Walls/Circles" index="44" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 700)
+
+[node name="CircleWall27" parent="Walls/Circles" index="45" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 700)
+
+[node name="CircleWall28" parent="Walls/Circles" index="46" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 650)
+
+[node name="CircleWall29" parent="Walls/Circles" index="47" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 650)
+
+[node name="CircleWall30" parent="Walls/Circles" index="48" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 650)
+
+[node name="CircleWall31" parent="Walls/Circles" index="49" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 700)
+
+[node name="CircleWall32" parent="Walls/Circles" index="50" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 700)
+
+[node name="CircleWall33" parent="Walls/Circles" index="51" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 700)
+
+[node name="CircleWall34" parent="Walls/Circles" index="52" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 700)
+
+[node name="CircleWall35" parent="Walls/Circles" index="53" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 650)
+
+[node name="CircleWall55" parent="Walls/Circles" index="54" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 600)
+
+[node name="CircleWall56" parent="Walls/Circles" index="55" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 600)
+
+[node name="CircleWall61" parent="Walls/Circles" index="56" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 600)
+
+[node name="CircleWall62" parent="Walls/Circles" index="57" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 600)
+
+[node name="CircleWall63" parent="Walls/Circles" index="58" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 600)
+
+[node name="CircleWall64" parent="Walls/Circles" index="59" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 600)
+
+[node name="CircleWall68" parent="Walls/Circles" index="60" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 600)
+
+[node name="CircleWall71" parent="Walls/Circles" index="61" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 600)
+
+[node name="CircleWall72" parent="Walls/Circles" index="62" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 600)
+
+[node name="CircleWall73" parent="Walls/Circles" index="63" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 600)
+
+[node name="CircleWall65" parent="Walls/Circles" index="64" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1680)
+
+[node name="CircleWall66" parent="Walls/Circles" index="65" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1730)
+
+[node name="CircleWall67" parent="Walls/Circles" index="66" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1730)
+
+[node name="CircleWall69" parent="Walls/Circles" index="67" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1780)
+
+[node name="CircleWall70" parent="Walls/Circles" index="68" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1780)
+
+[node name="CircleWall74" parent="Walls/Circles" index="69" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1830)
+
+[node name="CircleWall75" parent="Walls/Circles" index="70" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1830)
+
+[node name="CircleWall76" parent="Walls/Circles" index="71" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1830)
+
+[node name="CircleWall77" parent="Walls/Circles" index="72" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1830)
+
+[node name="CircleWall78" parent="Walls/Circles" index="73" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1780)
+
+[node name="CircleWall79" parent="Walls/Circles" index="74" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1780)
+
+[node name="CircleWall80" parent="Walls/Circles" index="75" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1780)
+
+[node name="CircleWall81" parent="Walls/Circles" index="76" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1830)
+
+[node name="CircleWall82" parent="Walls/Circles" index="77" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1830)
+
+[node name="CircleWall83" parent="Walls/Circles" index="78" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1830)
+
+[node name="CircleWall84" parent="Walls/Circles" index="79" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1780)
+
+[node name="CircleWall85" parent="Walls/Circles" index="80" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1780)
+
+[node name="CircleWall86" parent="Walls/Circles" index="81" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1780)
+
+[node name="CircleWall87" parent="Walls/Circles" index="82" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1830)
+
+[node name="CircleWall88" parent="Walls/Circles" index="83" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1830)
+
+[node name="CircleWall89" parent="Walls/Circles" index="84" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1830)
+
+[node name="CircleWall90" parent="Walls/Circles" index="85" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1780)
+
+[node name="CircleWall91" parent="Walls/Circles" index="86" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1680)
+
+[node name="CircleWall92" parent="Walls/Circles" index="87" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1680)
+
+[node name="CircleWall93" parent="Walls/Circles" index="88" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1680)
+
+[node name="CircleWall94" parent="Walls/Circles" index="89" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1680)
+
+[node name="CircleWall95" parent="Walls/Circles" index="90" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1730)
+
+[node name="CircleWall96" parent="Walls/Circles" index="91" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1730)
+
+[node name="CircleWall97" parent="Walls/Circles" index="92" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1730)
+
+[node name="CircleWall98" parent="Walls/Circles" index="93" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1730)
+
+[node name="CircleWall99" parent="Walls/Circles" index="94" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1680)
+
+[node name="CircleWall100" parent="Walls/Circles" index="95" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1680)
+
+[node name="CircleWall101" parent="Walls/Circles" index="96" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1680)
+
+[node name="CircleWall102" parent="Walls/Circles" index="97" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1730)
+
+[node name="CircleWall107" parent="Walls/Circles" index="98" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1730)
+
+[node name="CircleWall108" parent="Walls/Circles" index="99" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1730)
+
+[node name="CircleWall109" parent="Walls/Circles" index="100" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1730)
+
+[node name="CircleWall110" parent="Walls/Circles" index="101" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1680)
+
+[node name="CircleWall111" parent="Walls/Circles" index="102" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1630)
+
+[node name="CircleWall112" parent="Walls/Circles" index="103" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1630)
+
+[node name="CircleWall113" parent="Walls/Circles" index="104" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1630)
+
+[node name="CircleWall114" parent="Walls/Circles" index="105" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1630)
+
+[node name="CircleWall115" parent="Walls/Circles" index="106" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1630)
+
+[node name="CircleWall116" parent="Walls/Circles" index="107" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1630)
+
+[node name="CircleWall117" parent="Walls/Circles" index="108" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1630)
+
+[node name="CircleWall118" parent="Walls/Circles" index="109" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1630)
+
+[node name="CircleWall119" parent="Walls/Circles" index="110" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1630)
+
+[node name="CircleWall120" parent="Walls/Circles" index="111" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1630)
+
+[node name="CircleWall121" parent="Walls/Circles" index="112" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1680)
+
+[node name="CircleWall122" parent="Walls/Circles" index="113" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1730)
+
+[node name="CircleWall123" parent="Walls/Circles" index="114" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1730)
+
+[node name="CircleWall124" parent="Walls/Circles" index="115" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1780)
+
+[node name="CircleWall125" parent="Walls/Circles" index="116" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1780)
+
+[node name="CircleWall126" parent="Walls/Circles" index="117" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1830)
+
+[node name="CircleWall127" parent="Walls/Circles" index="118" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1830)
+
+[node name="CircleWall128" parent="Walls/Circles" index="119" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1830)
+
+[node name="CircleWall129" parent="Walls/Circles" index="120" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1830)
+
+[node name="CircleWall130" parent="Walls/Circles" index="121" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1780)
+
+[node name="CircleWall131" parent="Walls/Circles" index="122" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1780)
+
+[node name="CircleWall132" parent="Walls/Circles" index="123" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1780)
+
+[node name="CircleWall133" parent="Walls/Circles" index="124" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1830)
+
+[node name="CircleWall134" parent="Walls/Circles" index="125" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1830)
+
+[node name="CircleWall135" parent="Walls/Circles" index="126" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1830)
+
+[node name="CircleWall136" parent="Walls/Circles" index="127" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1780)
+
+[node name="CircleWall137" parent="Walls/Circles" index="128" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1780)
+
+[node name="CircleWall138" parent="Walls/Circles" index="129" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1780)
+
+[node name="CircleWall139" parent="Walls/Circles" index="130" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1830)
+
+[node name="CircleWall140" parent="Walls/Circles" index="131" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1830)
+
+[node name="CircleWall141" parent="Walls/Circles" index="132" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1830)
+
+[node name="CircleWall142" parent="Walls/Circles" index="133" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1780)
+
+[node name="CircleWall143" parent="Walls/Circles" index="134" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1680)
+
+[node name="CircleWall144" parent="Walls/Circles" index="135" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1680)
+
+[node name="CircleWall145" parent="Walls/Circles" index="136" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1680)
+
+[node name="CircleWall146" parent="Walls/Circles" index="137" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1680)
+
+[node name="CircleWall147" parent="Walls/Circles" index="138" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1730)
+
+[node name="CircleWall148" parent="Walls/Circles" index="139" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1730)
+
+[node name="CircleWall149" parent="Walls/Circles" index="140" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1730)
+
+[node name="CircleWall150" parent="Walls/Circles" index="141" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1730)
+
+[node name="CircleWall151" parent="Walls/Circles" index="142" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1680)
+
+[node name="CircleWall152" parent="Walls/Circles" index="143" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1680)
+
+[node name="CircleWall153" parent="Walls/Circles" index="144" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1680)
+
+[node name="CircleWall154" parent="Walls/Circles" index="145" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1730)
+
+[node name="CircleWall159" parent="Walls/Circles" index="146" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1730)
+
+[node name="CircleWall160" parent="Walls/Circles" index="147" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1730)
+
+[node name="CircleWall161" parent="Walls/Circles" index="148" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1730)
+
+[node name="CircleWall162" parent="Walls/Circles" index="149" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1680)
+
+[node name="CircleWall163" parent="Walls/Circles" index="150" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1880)
+
+[node name="CircleWall164" parent="Walls/Circles" index="151" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1930)
+
+[node name="CircleWall165" parent="Walls/Circles" index="152" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1930)
+
+[node name="CircleWall166" parent="Walls/Circles" index="153" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1980)
+
+[node name="CircleWall167" parent="Walls/Circles" index="154" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1980)
+
+[node name="CircleWall168" parent="Walls/Circles" index="155" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2030)
+
+[node name="CircleWall169" parent="Walls/Circles" index="156" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2030)
+
+[node name="CircleWall170" parent="Walls/Circles" index="157" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2030)
+
+[node name="CircleWall171" parent="Walls/Circles" index="158" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2030)
+
+[node name="CircleWall172" parent="Walls/Circles" index="159" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1980)
+
+[node name="CircleWall173" parent="Walls/Circles" index="160" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1980)
+
+[node name="CircleWall174" parent="Walls/Circles" index="161" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1980)
+
+[node name="CircleWall175" parent="Walls/Circles" index="162" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2030)
+
+[node name="CircleWall176" parent="Walls/Circles" index="163" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2030)
+
+[node name="CircleWall177" parent="Walls/Circles" index="164" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2030)
+
+[node name="CircleWall178" parent="Walls/Circles" index="165" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1980)
+
+[node name="CircleWall179" parent="Walls/Circles" index="166" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1980)
+
+[node name="CircleWall180" parent="Walls/Circles" index="167" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1980)
+
+[node name="CircleWall181" parent="Walls/Circles" index="168" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2030)
+
+[node name="CircleWall182" parent="Walls/Circles" index="169" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2030)
+
+[node name="CircleWall183" parent="Walls/Circles" index="170" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2030)
+
+[node name="CircleWall184" parent="Walls/Circles" index="171" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1980)
+
+[node name="CircleWall185" parent="Walls/Circles" index="172" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1880)
+
+[node name="CircleWall186" parent="Walls/Circles" index="173" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1880)
+
+[node name="CircleWall187" parent="Walls/Circles" index="174" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1880)
+
+[node name="CircleWall188" parent="Walls/Circles" index="175" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1880)
+
+[node name="CircleWall189" parent="Walls/Circles" index="176" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1930)
+
+[node name="CircleWall190" parent="Walls/Circles" index="177" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1930)
+
+[node name="CircleWall191" parent="Walls/Circles" index="178" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1930)
+
+[node name="CircleWall192" parent="Walls/Circles" index="179" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1930)
+
+[node name="CircleWall193" parent="Walls/Circles" index="180" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1880)
+
+[node name="CircleWall194" parent="Walls/Circles" index="181" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1880)
+
+[node name="CircleWall195" parent="Walls/Circles" index="182" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1880)
+
+[node name="CircleWall196" parent="Walls/Circles" index="183" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1930)
+
+[node name="CircleWall201" parent="Walls/Circles" index="184" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1930)
+
+[node name="CircleWall202" parent="Walls/Circles" index="185" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1930)
+
+[node name="CircleWall203" parent="Walls/Circles" index="186" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1930)
+
+[node name="CircleWall204" parent="Walls/Circles" index="187" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1880)
+
+[node name="CircleWall205" parent="Walls/Circles" index="188" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1880)
+
+[node name="CircleWall206" parent="Walls/Circles" index="189" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1930)
+
+[node name="CircleWall207" parent="Walls/Circles" index="190" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1930)
+
+[node name="CircleWall208" parent="Walls/Circles" index="191" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1980)
+
+[node name="CircleWall209" parent="Walls/Circles" index="192" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1980)
+
+[node name="CircleWall210" parent="Walls/Circles" index="193" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2030)
+
+[node name="CircleWall211" parent="Walls/Circles" index="194" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2030)
+
+[node name="CircleWall212" parent="Walls/Circles" index="195" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2030)
+
+[node name="CircleWall213" parent="Walls/Circles" index="196" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2030)
+
+[node name="CircleWall214" parent="Walls/Circles" index="197" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1980)
+
+[node name="CircleWall215" parent="Walls/Circles" index="198" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1980)
+
+[node name="CircleWall216" parent="Walls/Circles" index="199" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1980)
+
+[node name="CircleWall217" parent="Walls/Circles" index="200" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2030)
+
+[node name="CircleWall218" parent="Walls/Circles" index="201" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2030)
+
+[node name="CircleWall219" parent="Walls/Circles" index="202" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2030)
+
+[node name="CircleWall220" parent="Walls/Circles" index="203" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1980)
+
+[node name="CircleWall221" parent="Walls/Circles" index="204" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1980)
+
+[node name="CircleWall222" parent="Walls/Circles" index="205" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1980)
+
+[node name="CircleWall223" parent="Walls/Circles" index="206" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2030)
+
+[node name="CircleWall224" parent="Walls/Circles" index="207" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2030)
+
+[node name="CircleWall225" parent="Walls/Circles" index="208" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2030)
+
+[node name="CircleWall226" parent="Walls/Circles" index="209" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1980)
+
+[node name="CircleWall227" parent="Walls/Circles" index="210" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1880)
+
+[node name="CircleWall228" parent="Walls/Circles" index="211" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1880)
+
+[node name="CircleWall229" parent="Walls/Circles" index="212" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1880)
+
+[node name="CircleWall230" parent="Walls/Circles" index="213" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1880)
+
+[node name="CircleWall231" parent="Walls/Circles" index="214" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1930)
+
+[node name="CircleWall232" parent="Walls/Circles" index="215" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1930)
+
+[node name="CircleWall233" parent="Walls/Circles" index="216" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1930)
+
+[node name="CircleWall234" parent="Walls/Circles" index="217" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1930)
+
+[node name="CircleWall235" parent="Walls/Circles" index="218" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1880)
+
+[node name="CircleWall236" parent="Walls/Circles" index="219" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1880)
+
+[node name="CircleWall237" parent="Walls/Circles" index="220" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1880)
+
+[node name="CircleWall238" parent="Walls/Circles" index="221" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1930)
+
+[node name="CircleWall243" parent="Walls/Circles" index="222" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1930)
+
+[node name="CircleWall244" parent="Walls/Circles" index="223" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1930)
+
+[node name="CircleWall245" parent="Walls/Circles" index="224" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1930)
+
+[node name="CircleWall246" parent="Walls/Circles" index="225" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1880)
+
+[node name="CircleWall247" parent="Walls/Circles" index="226" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1630)
+
+[node name="CircleWall248" parent="Walls/Circles" index="227" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1630)
+
+[node name="CircleWall249" parent="Walls/Circles" index="228" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1630)
+
+[node name="CircleWall250" parent="Walls/Circles" index="229" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1630)
+
+[node name="CircleWall251" parent="Walls/Circles" index="230" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1630)
+
+[node name="CircleWall252" parent="Walls/Circles" index="231" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1630)
+
+[node name="CircleWall253" parent="Walls/Circles" index="232" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1630)
+
+[node name="CircleWall254" parent="Walls/Circles" index="233" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1630)
+
+[node name="CircleWall255" parent="Walls/Circles" index="234" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1630)
+
+[node name="CircleWall256" parent="Walls/Circles" index="235" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1630)
+
+[node name="CircleWall257" parent="Walls/Circles" index="236" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1680)
+
+[node name="CircleWall258" parent="Walls/Circles" index="237" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1730)
+
+[node name="CircleWall259" parent="Walls/Circles" index="238" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1730)
+
+[node name="CircleWall260" parent="Walls/Circles" index="239" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1780)
+
+[node name="CircleWall261" parent="Walls/Circles" index="240" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1780)
+
+[node name="CircleWall262" parent="Walls/Circles" index="241" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1830)
+
+[node name="CircleWall263" parent="Walls/Circles" index="242" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1830)
+
+[node name="CircleWall264" parent="Walls/Circles" index="243" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1830)
+
+[node name="CircleWall265" parent="Walls/Circles" index="244" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1830)
+
+[node name="CircleWall266" parent="Walls/Circles" index="245" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1780)
+
+[node name="CircleWall267" parent="Walls/Circles" index="246" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1780)
+
+[node name="CircleWall268" parent="Walls/Circles" index="247" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1780)
+
+[node name="CircleWall269" parent="Walls/Circles" index="248" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1830)
+
+[node name="CircleWall270" parent="Walls/Circles" index="249" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1830)
+
+[node name="CircleWall271" parent="Walls/Circles" index="250" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1830)
+
+[node name="CircleWall272" parent="Walls/Circles" index="251" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1780)
+
+[node name="CircleWall273" parent="Walls/Circles" index="252" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1780)
+
+[node name="CircleWall274" parent="Walls/Circles" index="253" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1780)
+
+[node name="CircleWall275" parent="Walls/Circles" index="254" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1830)
+
+[node name="CircleWall276" parent="Walls/Circles" index="255" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1830)
+
+[node name="CircleWall277" parent="Walls/Circles" index="256" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1830)
+
+[node name="CircleWall278" parent="Walls/Circles" index="257" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1780)
+
+[node name="CircleWall279" parent="Walls/Circles" index="258" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1680)
+
+[node name="CircleWall280" parent="Walls/Circles" index="259" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1680)
+
+[node name="CircleWall281" parent="Walls/Circles" index="260" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1680)
+
+[node name="CircleWall282" parent="Walls/Circles" index="261" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1680)
+
+[node name="CircleWall283" parent="Walls/Circles" index="262" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1730)
+
+[node name="CircleWall284" parent="Walls/Circles" index="263" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1730)
+
+[node name="CircleWall285" parent="Walls/Circles" index="264" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1730)
+
+[node name="CircleWall286" parent="Walls/Circles" index="265" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1730)
+
+[node name="CircleWall287" parent="Walls/Circles" index="266" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1680)
+
+[node name="CircleWall288" parent="Walls/Circles" index="267" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1680)
+
+[node name="CircleWall289" parent="Walls/Circles" index="268" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1680)
+
+[node name="CircleWall290" parent="Walls/Circles" index="269" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1730)
+
+[node name="CircleWall295" parent="Walls/Circles" index="270" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1730)
+
+[node name="CircleWall296" parent="Walls/Circles" index="271" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1730)
+
+[node name="CircleWall297" parent="Walls/Circles" index="272" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1730)
+
+[node name="CircleWall298" parent="Walls/Circles" index="273" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1680)
+
+[node name="CircleWall299" parent="Walls/Circles" index="274" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1630)
+
+[node name="CircleWall300" parent="Walls/Circles" index="275" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1630)
+
+[node name="CircleWall301" parent="Walls/Circles" index="276" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1630)
+
+[node name="CircleWall302" parent="Walls/Circles" index="277" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1630)
+
+[node name="CircleWall303" parent="Walls/Circles" index="278" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1630)
+
+[node name="CircleWall304" parent="Walls/Circles" index="279" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1630)
+
+[node name="CircleWall305" parent="Walls/Circles" index="280" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1630)
+
+[node name="CircleWall306" parent="Walls/Circles" index="281" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1630)
+
+[node name="CircleWall307" parent="Walls/Circles" index="282" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1630)
+
+[node name="CircleWall308" parent="Walls/Circles" index="283" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1630)
+
+[node name="CircleWall309" parent="Walls/Circles" index="284" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1680)
+
+[node name="CircleWall310" parent="Walls/Circles" index="285" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1730)
+
+[node name="CircleWall311" parent="Walls/Circles" index="286" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1730)
+
+[node name="CircleWall312" parent="Walls/Circles" index="287" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1780)
+
+[node name="CircleWall313" parent="Walls/Circles" index="288" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1780)
+
+[node name="CircleWall314" parent="Walls/Circles" index="289" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1830)
+
+[node name="CircleWall315" parent="Walls/Circles" index="290" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1830)
+
+[node name="CircleWall316" parent="Walls/Circles" index="291" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1830)
+
+[node name="CircleWall317" parent="Walls/Circles" index="292" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1830)
+
+[node name="CircleWall318" parent="Walls/Circles" index="293" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1780)
+
+[node name="CircleWall319" parent="Walls/Circles" index="294" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1780)
+
+[node name="CircleWall320" parent="Walls/Circles" index="295" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1780)
+
+[node name="CircleWall321" parent="Walls/Circles" index="296" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1830)
+
+[node name="CircleWall322" parent="Walls/Circles" index="297" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1830)
+
+[node name="CircleWall323" parent="Walls/Circles" index="298" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1830)
+
+[node name="CircleWall324" parent="Walls/Circles" index="299" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1780)
+
+[node name="CircleWall325" parent="Walls/Circles" index="300" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1780)
+
+[node name="CircleWall326" parent="Walls/Circles" index="301" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1780)
+
+[node name="CircleWall327" parent="Walls/Circles" index="302" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1830)
+
+[node name="CircleWall328" parent="Walls/Circles" index="303" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1830)
+
+[node name="CircleWall329" parent="Walls/Circles" index="304" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1830)
+
+[node name="CircleWall330" parent="Walls/Circles" index="305" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1780)
+
+[node name="CircleWall331" parent="Walls/Circles" index="306" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1680)
+
+[node name="CircleWall332" parent="Walls/Circles" index="307" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1680)
+
+[node name="CircleWall333" parent="Walls/Circles" index="308" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1680)
+
+[node name="CircleWall334" parent="Walls/Circles" index="309" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1680)
+
+[node name="CircleWall335" parent="Walls/Circles" index="310" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1730)
+
+[node name="CircleWall336" parent="Walls/Circles" index="311" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1730)
+
+[node name="CircleWall337" parent="Walls/Circles" index="312" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1730)
+
+[node name="CircleWall338" parent="Walls/Circles" index="313" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1730)
+
+[node name="CircleWall339" parent="Walls/Circles" index="314" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1680)
+
+[node name="CircleWall340" parent="Walls/Circles" index="315" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1680)
+
+[node name="CircleWall341" parent="Walls/Circles" index="316" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1680)
+
+[node name="CircleWall342" parent="Walls/Circles" index="317" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1730)
+
+[node name="CircleWall347" parent="Walls/Circles" index="318" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1730)
+
+[node name="CircleWall348" parent="Walls/Circles" index="319" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1730)
+
+[node name="CircleWall349" parent="Walls/Circles" index="320" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1730)
+
+[node name="CircleWall350" parent="Walls/Circles" index="321" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1680)
+
+[node name="CircleWall351" parent="Walls/Circles" index="322" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1880)
+
+[node name="CircleWall352" parent="Walls/Circles" index="323" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1930)
+
+[node name="CircleWall353" parent="Walls/Circles" index="324" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1930)
+
+[node name="CircleWall354" parent="Walls/Circles" index="325" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1980)
+
+[node name="CircleWall355" parent="Walls/Circles" index="326" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1980)
+
+[node name="CircleWall356" parent="Walls/Circles" index="327" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2030)
+
+[node name="CircleWall357" parent="Walls/Circles" index="328" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2030)
+
+[node name="CircleWall358" parent="Walls/Circles" index="329" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2030)
+
+[node name="CircleWall359" parent="Walls/Circles" index="330" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2030)
+
+[node name="CircleWall360" parent="Walls/Circles" index="331" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1980)
+
+[node name="CircleWall361" parent="Walls/Circles" index="332" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1980)
+
+[node name="CircleWall362" parent="Walls/Circles" index="333" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1980)
+
+[node name="CircleWall363" parent="Walls/Circles" index="334" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2030)
+
+[node name="CircleWall364" parent="Walls/Circles" index="335" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2030)
+
+[node name="CircleWall365" parent="Walls/Circles" index="336" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2030)
+
+[node name="CircleWall366" parent="Walls/Circles" index="337" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1980)
+
+[node name="CircleWall367" parent="Walls/Circles" index="338" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1980)
+
+[node name="CircleWall368" parent="Walls/Circles" index="339" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1980)
+
+[node name="CircleWall369" parent="Walls/Circles" index="340" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2030)
+
+[node name="CircleWall370" parent="Walls/Circles" index="341" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2030)
+
+[node name="CircleWall371" parent="Walls/Circles" index="342" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2030)
+
+[node name="CircleWall372" parent="Walls/Circles" index="343" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1980)
+
+[node name="CircleWall373" parent="Walls/Circles" index="344" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1880)
+
+[node name="CircleWall374" parent="Walls/Circles" index="345" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1880)
+
+[node name="CircleWall375" parent="Walls/Circles" index="346" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1880)
+
+[node name="CircleWall376" parent="Walls/Circles" index="347" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1880)
+
+[node name="CircleWall377" parent="Walls/Circles" index="348" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1930)
+
+[node name="CircleWall378" parent="Walls/Circles" index="349" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1930)
+
+[node name="CircleWall379" parent="Walls/Circles" index="350" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1930)
+
+[node name="CircleWall380" parent="Walls/Circles" index="351" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1930)
+
+[node name="CircleWall381" parent="Walls/Circles" index="352" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1880)
+
+[node name="CircleWall382" parent="Walls/Circles" index="353" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1880)
+
+[node name="CircleWall383" parent="Walls/Circles" index="354" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1880)
+
+[node name="CircleWall384" parent="Walls/Circles" index="355" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1930)
+
+[node name="CircleWall389" parent="Walls/Circles" index="356" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1930)
+
+[node name="CircleWall390" parent="Walls/Circles" index="357" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1930)
+
+[node name="CircleWall391" parent="Walls/Circles" index="358" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1930)
+
+[node name="CircleWall392" parent="Walls/Circles" index="359" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1880)
+
+[node name="CircleWall393" parent="Walls/Circles" index="360" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1880)
+
+[node name="CircleWall394" parent="Walls/Circles" index="361" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1930)
+
+[node name="CircleWall395" parent="Walls/Circles" index="362" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1930)
+
+[node name="CircleWall396" parent="Walls/Circles" index="363" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1980)
+
+[node name="CircleWall397" parent="Walls/Circles" index="364" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 1980)
+
+[node name="CircleWall398" parent="Walls/Circles" index="365" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2030)
+
+[node name="CircleWall399" parent="Walls/Circles" index="366" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2030)
+
+[node name="CircleWall400" parent="Walls/Circles" index="367" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2030)
+
+[node name="CircleWall401" parent="Walls/Circles" index="368" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2030)
+
+[node name="CircleWall402" parent="Walls/Circles" index="369" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1980)
+
+[node name="CircleWall403" parent="Walls/Circles" index="370" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1980)
+
+[node name="CircleWall404" parent="Walls/Circles" index="371" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1980)
+
+[node name="CircleWall405" parent="Walls/Circles" index="372" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2030)
+
+[node name="CircleWall406" parent="Walls/Circles" index="373" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2030)
+
+[node name="CircleWall407" parent="Walls/Circles" index="374" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2030)
+
+[node name="CircleWall408" parent="Walls/Circles" index="375" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1980)
+
+[node name="CircleWall409" parent="Walls/Circles" index="376" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1980)
+
+[node name="CircleWall410" parent="Walls/Circles" index="377" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1980)
+
+[node name="CircleWall411" parent="Walls/Circles" index="378" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2030)
+
+[node name="CircleWall412" parent="Walls/Circles" index="379" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2030)
+
+[node name="CircleWall413" parent="Walls/Circles" index="380" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2030)
+
+[node name="CircleWall414" parent="Walls/Circles" index="381" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1980)
+
+[node name="CircleWall415" parent="Walls/Circles" index="382" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 1880)
+
+[node name="CircleWall416" parent="Walls/Circles" index="383" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 1880)
+
+[node name="CircleWall417" parent="Walls/Circles" index="384" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 1880)
+
+[node name="CircleWall418" parent="Walls/Circles" index="385" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 1880)
+
+[node name="CircleWall419" parent="Walls/Circles" index="386" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1930)
+
+[node name="CircleWall420" parent="Walls/Circles" index="387" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1930)
+
+[node name="CircleWall421" parent="Walls/Circles" index="388" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1930)
+
+[node name="CircleWall422" parent="Walls/Circles" index="389" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1930)
+
+[node name="CircleWall423" parent="Walls/Circles" index="390" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 1880)
+
+[node name="CircleWall424" parent="Walls/Circles" index="391" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 1880)
+
+[node name="CircleWall425" parent="Walls/Circles" index="392" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 1880)
+
+[node name="CircleWall426" parent="Walls/Circles" index="393" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1930)
+
+[node name="CircleWall431" parent="Walls/Circles" index="394" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1930)
+
+[node name="CircleWall432" parent="Walls/Circles" index="395" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1930)
+
+[node name="CircleWall433" parent="Walls/Circles" index="396" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1930)
+
+[node name="CircleWall434" parent="Walls/Circles" index="397" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 1880)
+
+[node name="CircleWall435" parent="Walls/Circles" index="398" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2080)
+
+[node name="CircleWall436" parent="Walls/Circles" index="399" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2130)
+
+[node name="CircleWall437" parent="Walls/Circles" index="400" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2130)
+
+[node name="CircleWall438" parent="Walls/Circles" index="401" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2180)
+
+[node name="CircleWall439" parent="Walls/Circles" index="402" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2180)
+
+[node name="CircleWall440" parent="Walls/Circles" index="403" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2230)
+
+[node name="CircleWall441" parent="Walls/Circles" index="404" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2230)
+
+[node name="CircleWall442" parent="Walls/Circles" index="405" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2230)
+
+[node name="CircleWall443" parent="Walls/Circles" index="406" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2230)
+
+[node name="CircleWall444" parent="Walls/Circles" index="407" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2180)
+
+[node name="CircleWall445" parent="Walls/Circles" index="408" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2180)
+
+[node name="CircleWall446" parent="Walls/Circles" index="409" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2180)
+
+[node name="CircleWall447" parent="Walls/Circles" index="410" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2230)
+
+[node name="CircleWall448" parent="Walls/Circles" index="411" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2230)
+
+[node name="CircleWall449" parent="Walls/Circles" index="412" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2230)
+
+[node name="CircleWall450" parent="Walls/Circles" index="413" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2180)
+
+[node name="CircleWall451" parent="Walls/Circles" index="414" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2180)
+
+[node name="CircleWall452" parent="Walls/Circles" index="415" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2180)
+
+[node name="CircleWall453" parent="Walls/Circles" index="416" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2230)
+
+[node name="CircleWall454" parent="Walls/Circles" index="417" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2230)
+
+[node name="CircleWall455" parent="Walls/Circles" index="418" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2230)
+
+[node name="CircleWall456" parent="Walls/Circles" index="419" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2180)
+
+[node name="CircleWall457" parent="Walls/Circles" index="420" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2080)
+
+[node name="CircleWall458" parent="Walls/Circles" index="421" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2080)
+
+[node name="CircleWall459" parent="Walls/Circles" index="422" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2080)
+
+[node name="CircleWall460" parent="Walls/Circles" index="423" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2080)
+
+[node name="CircleWall461" parent="Walls/Circles" index="424" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2130)
+
+[node name="CircleWall462" parent="Walls/Circles" index="425" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2130)
+
+[node name="CircleWall463" parent="Walls/Circles" index="426" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2130)
+
+[node name="CircleWall464" parent="Walls/Circles" index="427" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2130)
+
+[node name="CircleWall465" parent="Walls/Circles" index="428" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2080)
+
+[node name="CircleWall466" parent="Walls/Circles" index="429" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2080)
+
+[node name="CircleWall467" parent="Walls/Circles" index="430" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2080)
+
+[node name="CircleWall468" parent="Walls/Circles" index="431" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2130)
+
+[node name="CircleWall473" parent="Walls/Circles" index="432" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2130)
+
+[node name="CircleWall474" parent="Walls/Circles" index="433" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2130)
+
+[node name="CircleWall475" parent="Walls/Circles" index="434" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2130)
+
+[node name="CircleWall476" parent="Walls/Circles" index="435" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2080)
+
+[node name="CircleWall477" parent="Walls/Circles" index="436" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2080)
+
+[node name="CircleWall478" parent="Walls/Circles" index="437" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2130)
+
+[node name="CircleWall479" parent="Walls/Circles" index="438" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2130)
+
+[node name="CircleWall480" parent="Walls/Circles" index="439" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2180)
+
+[node name="CircleWall481" parent="Walls/Circles" index="440" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2180)
+
+[node name="CircleWall482" parent="Walls/Circles" index="441" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2230)
+
+[node name="CircleWall483" parent="Walls/Circles" index="442" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2230)
+
+[node name="CircleWall484" parent="Walls/Circles" index="443" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2230)
+
+[node name="CircleWall485" parent="Walls/Circles" index="444" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2230)
+
+[node name="CircleWall486" parent="Walls/Circles" index="445" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2180)
+
+[node name="CircleWall487" parent="Walls/Circles" index="446" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2180)
+
+[node name="CircleWall488" parent="Walls/Circles" index="447" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2180)
+
+[node name="CircleWall489" parent="Walls/Circles" index="448" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2230)
+
+[node name="CircleWall490" parent="Walls/Circles" index="449" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2230)
+
+[node name="CircleWall491" parent="Walls/Circles" index="450" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2230)
+
+[node name="CircleWall492" parent="Walls/Circles" index="451" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2180)
+
+[node name="CircleWall493" parent="Walls/Circles" index="452" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2180)
+
+[node name="CircleWall494" parent="Walls/Circles" index="453" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2180)
+
+[node name="CircleWall495" parent="Walls/Circles" index="454" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2230)
+
+[node name="CircleWall496" parent="Walls/Circles" index="455" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2230)
+
+[node name="CircleWall497" parent="Walls/Circles" index="456" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2230)
+
+[node name="CircleWall498" parent="Walls/Circles" index="457" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2180)
+
+[node name="CircleWall499" parent="Walls/Circles" index="458" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2080)
+
+[node name="CircleWall500" parent="Walls/Circles" index="459" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2080)
+
+[node name="CircleWall501" parent="Walls/Circles" index="460" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2080)
+
+[node name="CircleWall502" parent="Walls/Circles" index="461" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2080)
+
+[node name="CircleWall503" parent="Walls/Circles" index="462" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2130)
+
+[node name="CircleWall504" parent="Walls/Circles" index="463" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2130)
+
+[node name="CircleWall505" parent="Walls/Circles" index="464" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2130)
+
+[node name="CircleWall506" parent="Walls/Circles" index="465" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2130)
+
+[node name="CircleWall507" parent="Walls/Circles" index="466" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2080)
+
+[node name="CircleWall508" parent="Walls/Circles" index="467" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2080)
+
+[node name="CircleWall509" parent="Walls/Circles" index="468" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2080)
+
+[node name="CircleWall510" parent="Walls/Circles" index="469" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2130)
+
+[node name="CircleWall515" parent="Walls/Circles" index="470" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2130)
+
+[node name="CircleWall516" parent="Walls/Circles" index="471" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2130)
+
+[node name="CircleWall517" parent="Walls/Circles" index="472" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2130)
+
+[node name="CircleWall518" parent="Walls/Circles" index="473" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2080)
+
+[node name="CircleWall519" parent="Walls/Circles" index="474" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2280)
+
+[node name="CircleWall520" parent="Walls/Circles" index="475" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2330)
+
+[node name="CircleWall521" parent="Walls/Circles" index="476" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2330)
+
+[node name="CircleWall522" parent="Walls/Circles" index="477" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2380)
+
+[node name="CircleWall523" parent="Walls/Circles" index="478" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2380)
+
+[node name="CircleWall524" parent="Walls/Circles" index="479" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2430)
+
+[node name="CircleWall525" parent="Walls/Circles" index="480" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2430)
+
+[node name="CircleWall526" parent="Walls/Circles" index="481" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2430)
+
+[node name="CircleWall527" parent="Walls/Circles" index="482" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2430)
+
+[node name="CircleWall528" parent="Walls/Circles" index="483" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2380)
+
+[node name="CircleWall529" parent="Walls/Circles" index="484" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2380)
+
+[node name="CircleWall530" parent="Walls/Circles" index="485" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2380)
+
+[node name="CircleWall531" parent="Walls/Circles" index="486" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2430)
+
+[node name="CircleWall532" parent="Walls/Circles" index="487" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2430)
+
+[node name="CircleWall533" parent="Walls/Circles" index="488" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2430)
+
+[node name="CircleWall534" parent="Walls/Circles" index="489" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2380)
+
+[node name="CircleWall535" parent="Walls/Circles" index="490" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2380)
+
+[node name="CircleWall536" parent="Walls/Circles" index="491" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2380)
+
+[node name="CircleWall537" parent="Walls/Circles" index="492" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2430)
+
+[node name="CircleWall538" parent="Walls/Circles" index="493" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2430)
+
+[node name="CircleWall539" parent="Walls/Circles" index="494" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2430)
+
+[node name="CircleWall540" parent="Walls/Circles" index="495" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2380)
+
+[node name="CircleWall541" parent="Walls/Circles" index="496" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2280)
+
+[node name="CircleWall542" parent="Walls/Circles" index="497" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2280)
+
+[node name="CircleWall543" parent="Walls/Circles" index="498" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2280)
+
+[node name="CircleWall544" parent="Walls/Circles" index="499" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2280)
+
+[node name="CircleWall545" parent="Walls/Circles" index="500" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2330)
+
+[node name="CircleWall546" parent="Walls/Circles" index="501" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2330)
+
+[node name="CircleWall547" parent="Walls/Circles" index="502" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2330)
+
+[node name="CircleWall548" parent="Walls/Circles" index="503" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2330)
+
+[node name="CircleWall549" parent="Walls/Circles" index="504" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2280)
+
+[node name="CircleWall550" parent="Walls/Circles" index="505" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2280)
+
+[node name="CircleWall551" parent="Walls/Circles" index="506" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2280)
+
+[node name="CircleWall552" parent="Walls/Circles" index="507" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2330)
+
+[node name="CircleWall557" parent="Walls/Circles" index="508" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2330)
+
+[node name="CircleWall558" parent="Walls/Circles" index="509" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2330)
+
+[node name="CircleWall559" parent="Walls/Circles" index="510" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2330)
+
+[node name="CircleWall560" parent="Walls/Circles" index="511" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2280)
+
+[node name="CircleWall561" parent="Walls/Circles" index="512" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2280)
+
+[node name="CircleWall562" parent="Walls/Circles" index="513" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2330)
+
+[node name="CircleWall563" parent="Walls/Circles" index="514" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2330)
+
+[node name="CircleWall564" parent="Walls/Circles" index="515" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2380)
+
+[node name="CircleWall565" parent="Walls/Circles" index="516" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2380)
+
+[node name="CircleWall566" parent="Walls/Circles" index="517" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2430)
+
+[node name="CircleWall567" parent="Walls/Circles" index="518" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2430)
+
+[node name="CircleWall568" parent="Walls/Circles" index="519" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2430)
+
+[node name="CircleWall569" parent="Walls/Circles" index="520" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2430)
+
+[node name="CircleWall570" parent="Walls/Circles" index="521" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2380)
+
+[node name="CircleWall571" parent="Walls/Circles" index="522" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2380)
+
+[node name="CircleWall572" parent="Walls/Circles" index="523" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2380)
+
+[node name="CircleWall573" parent="Walls/Circles" index="524" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2430)
+
+[node name="CircleWall574" parent="Walls/Circles" index="525" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2430)
+
+[node name="CircleWall575" parent="Walls/Circles" index="526" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2430)
+
+[node name="CircleWall576" parent="Walls/Circles" index="527" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2380)
+
+[node name="CircleWall577" parent="Walls/Circles" index="528" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2380)
+
+[node name="CircleWall578" parent="Walls/Circles" index="529" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2380)
+
+[node name="CircleWall579" parent="Walls/Circles" index="530" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2430)
+
+[node name="CircleWall580" parent="Walls/Circles" index="531" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2430)
+
+[node name="CircleWall581" parent="Walls/Circles" index="532" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2430)
+
+[node name="CircleWall582" parent="Walls/Circles" index="533" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2380)
+
+[node name="CircleWall583" parent="Walls/Circles" index="534" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2280)
+
+[node name="CircleWall584" parent="Walls/Circles" index="535" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2280)
+
+[node name="CircleWall585" parent="Walls/Circles" index="536" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2280)
+
+[node name="CircleWall586" parent="Walls/Circles" index="537" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2280)
+
+[node name="CircleWall587" parent="Walls/Circles" index="538" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2330)
+
+[node name="CircleWall588" parent="Walls/Circles" index="539" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2330)
+
+[node name="CircleWall589" parent="Walls/Circles" index="540" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2330)
+
+[node name="CircleWall590" parent="Walls/Circles" index="541" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2330)
+
+[node name="CircleWall591" parent="Walls/Circles" index="542" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2280)
+
+[node name="CircleWall592" parent="Walls/Circles" index="543" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2280)
+
+[node name="CircleWall593" parent="Walls/Circles" index="544" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2280)
+
+[node name="CircleWall594" parent="Walls/Circles" index="545" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2330)
+
+[node name="CircleWall599" parent="Walls/Circles" index="546" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2330)
+
+[node name="CircleWall600" parent="Walls/Circles" index="547" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2330)
+
+[node name="CircleWall601" parent="Walls/Circles" index="548" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2330)
+
+[node name="CircleWall602" parent="Walls/Circles" index="549" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2280)
+
+[node name="CircleWall603" parent="Walls/Circles" index="550" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2080)
+
+[node name="CircleWall604" parent="Walls/Circles" index="551" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2130)
+
+[node name="CircleWall605" parent="Walls/Circles" index="552" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2130)
+
+[node name="CircleWall606" parent="Walls/Circles" index="553" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2180)
+
+[node name="CircleWall607" parent="Walls/Circles" index="554" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2180)
+
+[node name="CircleWall608" parent="Walls/Circles" index="555" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2230)
+
+[node name="CircleWall609" parent="Walls/Circles" index="556" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2230)
+
+[node name="CircleWall610" parent="Walls/Circles" index="557" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2230)
+
+[node name="CircleWall611" parent="Walls/Circles" index="558" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2230)
+
+[node name="CircleWall612" parent="Walls/Circles" index="559" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2180)
+
+[node name="CircleWall613" parent="Walls/Circles" index="560" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2180)
+
+[node name="CircleWall614" parent="Walls/Circles" index="561" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2180)
+
+[node name="CircleWall615" parent="Walls/Circles" index="562" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2230)
+
+[node name="CircleWall616" parent="Walls/Circles" index="563" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2230)
+
+[node name="CircleWall617" parent="Walls/Circles" index="564" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2230)
+
+[node name="CircleWall618" parent="Walls/Circles" index="565" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2180)
+
+[node name="CircleWall619" parent="Walls/Circles" index="566" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2180)
+
+[node name="CircleWall620" parent="Walls/Circles" index="567" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2180)
+
+[node name="CircleWall621" parent="Walls/Circles" index="568" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2230)
+
+[node name="CircleWall622" parent="Walls/Circles" index="569" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2230)
+
+[node name="CircleWall623" parent="Walls/Circles" index="570" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2230)
+
+[node name="CircleWall624" parent="Walls/Circles" index="571" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2180)
+
+[node name="CircleWall625" parent="Walls/Circles" index="572" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2080)
+
+[node name="CircleWall626" parent="Walls/Circles" index="573" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2080)
+
+[node name="CircleWall627" parent="Walls/Circles" index="574" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2080)
+
+[node name="CircleWall628" parent="Walls/Circles" index="575" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2080)
+
+[node name="CircleWall629" parent="Walls/Circles" index="576" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2130)
+
+[node name="CircleWall630" parent="Walls/Circles" index="577" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2130)
+
+[node name="CircleWall631" parent="Walls/Circles" index="578" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2130)
+
+[node name="CircleWall632" parent="Walls/Circles" index="579" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2130)
+
+[node name="CircleWall633" parent="Walls/Circles" index="580" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2080)
+
+[node name="CircleWall634" parent="Walls/Circles" index="581" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2080)
+
+[node name="CircleWall635" parent="Walls/Circles" index="582" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2080)
+
+[node name="CircleWall636" parent="Walls/Circles" index="583" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2130)
+
+[node name="CircleWall641" parent="Walls/Circles" index="584" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2130)
+
+[node name="CircleWall642" parent="Walls/Circles" index="585" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2130)
+
+[node name="CircleWall643" parent="Walls/Circles" index="586" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2130)
+
+[node name="CircleWall644" parent="Walls/Circles" index="587" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2080)
+
+[node name="CircleWall645" parent="Walls/Circles" index="588" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2080)
+
+[node name="CircleWall646" parent="Walls/Circles" index="589" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2130)
+
+[node name="CircleWall647" parent="Walls/Circles" index="590" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2130)
+
+[node name="CircleWall648" parent="Walls/Circles" index="591" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2180)
+
+[node name="CircleWall649" parent="Walls/Circles" index="592" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2180)
+
+[node name="CircleWall650" parent="Walls/Circles" index="593" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2230)
+
+[node name="CircleWall651" parent="Walls/Circles" index="594" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2230)
+
+[node name="CircleWall652" parent="Walls/Circles" index="595" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2230)
+
+[node name="CircleWall653" parent="Walls/Circles" index="596" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2230)
+
+[node name="CircleWall654" parent="Walls/Circles" index="597" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2180)
+
+[node name="CircleWall655" parent="Walls/Circles" index="598" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2180)
+
+[node name="CircleWall656" parent="Walls/Circles" index="599" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2180)
+
+[node name="CircleWall657" parent="Walls/Circles" index="600" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2230)
+
+[node name="CircleWall658" parent="Walls/Circles" index="601" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2230)
+
+[node name="CircleWall659" parent="Walls/Circles" index="602" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2230)
+
+[node name="CircleWall660" parent="Walls/Circles" index="603" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2180)
+
+[node name="CircleWall661" parent="Walls/Circles" index="604" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2180)
+
+[node name="CircleWall662" parent="Walls/Circles" index="605" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2180)
+
+[node name="CircleWall663" parent="Walls/Circles" index="606" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2230)
+
+[node name="CircleWall664" parent="Walls/Circles" index="607" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2230)
+
+[node name="CircleWall665" parent="Walls/Circles" index="608" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2230)
+
+[node name="CircleWall666" parent="Walls/Circles" index="609" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2180)
+
+[node name="CircleWall667" parent="Walls/Circles" index="610" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2080)
+
+[node name="CircleWall668" parent="Walls/Circles" index="611" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2080)
+
+[node name="CircleWall669" parent="Walls/Circles" index="612" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2080)
+
+[node name="CircleWall670" parent="Walls/Circles" index="613" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2080)
+
+[node name="CircleWall671" parent="Walls/Circles" index="614" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2130)
+
+[node name="CircleWall672" parent="Walls/Circles" index="615" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2130)
+
+[node name="CircleWall673" parent="Walls/Circles" index="616" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2130)
+
+[node name="CircleWall674" parent="Walls/Circles" index="617" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2130)
+
+[node name="CircleWall675" parent="Walls/Circles" index="618" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2080)
+
+[node name="CircleWall676" parent="Walls/Circles" index="619" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2080)
+
+[node name="CircleWall677" parent="Walls/Circles" index="620" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2080)
+
+[node name="CircleWall678" parent="Walls/Circles" index="621" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2130)
+
+[node name="CircleWall683" parent="Walls/Circles" index="622" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2130)
+
+[node name="CircleWall684" parent="Walls/Circles" index="623" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2130)
+
+[node name="CircleWall685" parent="Walls/Circles" index="624" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2130)
+
+[node name="CircleWall686" parent="Walls/Circles" index="625" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2080)
+
+[node name="CircleWall687" parent="Walls/Circles" index="626" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2280)
+
+[node name="CircleWall688" parent="Walls/Circles" index="627" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2330)
+
+[node name="CircleWall689" parent="Walls/Circles" index="628" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2330)
+
+[node name="CircleWall690" parent="Walls/Circles" index="629" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2380)
+
+[node name="CircleWall691" parent="Walls/Circles" index="630" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2380)
+
+[node name="CircleWall692" parent="Walls/Circles" index="631" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2430)
+
+[node name="CircleWall693" parent="Walls/Circles" index="632" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2430)
+
+[node name="CircleWall694" parent="Walls/Circles" index="633" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2430)
+
+[node name="CircleWall695" parent="Walls/Circles" index="634" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2430)
+
+[node name="CircleWall696" parent="Walls/Circles" index="635" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2380)
+
+[node name="CircleWall697" parent="Walls/Circles" index="636" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2380)
+
+[node name="CircleWall698" parent="Walls/Circles" index="637" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2380)
+
+[node name="CircleWall699" parent="Walls/Circles" index="638" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2430)
+
+[node name="CircleWall700" parent="Walls/Circles" index="639" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2430)
+
+[node name="CircleWall701" parent="Walls/Circles" index="640" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2430)
+
+[node name="CircleWall702" parent="Walls/Circles" index="641" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2380)
+
+[node name="CircleWall703" parent="Walls/Circles" index="642" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2380)
+
+[node name="CircleWall704" parent="Walls/Circles" index="643" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2380)
+
+[node name="CircleWall705" parent="Walls/Circles" index="644" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2430)
+
+[node name="CircleWall706" parent="Walls/Circles" index="645" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2430)
+
+[node name="CircleWall707" parent="Walls/Circles" index="646" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2430)
+
+[node name="CircleWall708" parent="Walls/Circles" index="647" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2380)
+
+[node name="CircleWall709" parent="Walls/Circles" index="648" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2280)
+
+[node name="CircleWall710" parent="Walls/Circles" index="649" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2280)
+
+[node name="CircleWall711" parent="Walls/Circles" index="650" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2280)
+
+[node name="CircleWall712" parent="Walls/Circles" index="651" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2280)
+
+[node name="CircleWall713" parent="Walls/Circles" index="652" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2330)
+
+[node name="CircleWall714" parent="Walls/Circles" index="653" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2330)
+
+[node name="CircleWall715" parent="Walls/Circles" index="654" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2330)
+
+[node name="CircleWall716" parent="Walls/Circles" index="655" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2330)
+
+[node name="CircleWall717" parent="Walls/Circles" index="656" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2280)
+
+[node name="CircleWall718" parent="Walls/Circles" index="657" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2280)
+
+[node name="CircleWall719" parent="Walls/Circles" index="658" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2280)
+
+[node name="CircleWall720" parent="Walls/Circles" index="659" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2330)
+
+[node name="CircleWall725" parent="Walls/Circles" index="660" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2330)
+
+[node name="CircleWall726" parent="Walls/Circles" index="661" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2330)
+
+[node name="CircleWall727" parent="Walls/Circles" index="662" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2330)
+
+[node name="CircleWall728" parent="Walls/Circles" index="663" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2280)
+
+[node name="CircleWall729" parent="Walls/Circles" index="664" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2280)
+
+[node name="CircleWall730" parent="Walls/Circles" index="665" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2330)
+
+[node name="CircleWall731" parent="Walls/Circles" index="666" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2330)
+
+[node name="CircleWall732" parent="Walls/Circles" index="667" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2380)
+
+[node name="CircleWall733" parent="Walls/Circles" index="668" instance=ExtResource("3_v3ysa")]
+position = Vector2(0, 2380)
+
+[node name="CircleWall734" parent="Walls/Circles" index="669" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2430)
+
+[node name="CircleWall735" parent="Walls/Circles" index="670" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 2430)
+
+[node name="CircleWall736" parent="Walls/Circles" index="671" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 2430)
+
+[node name="CircleWall737" parent="Walls/Circles" index="672" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2430)
+
+[node name="CircleWall738" parent="Walls/Circles" index="673" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2380)
+
+[node name="CircleWall739" parent="Walls/Circles" index="674" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2380)
+
+[node name="CircleWall740" parent="Walls/Circles" index="675" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2380)
+
+[node name="CircleWall741" parent="Walls/Circles" index="676" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2430)
+
+[node name="CircleWall742" parent="Walls/Circles" index="677" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2430)
+
+[node name="CircleWall743" parent="Walls/Circles" index="678" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2430)
+
+[node name="CircleWall744" parent="Walls/Circles" index="679" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2380)
+
+[node name="CircleWall745" parent="Walls/Circles" index="680" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2380)
+
+[node name="CircleWall746" parent="Walls/Circles" index="681" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2380)
+
+[node name="CircleWall747" parent="Walls/Circles" index="682" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2430)
+
+[node name="CircleWall748" parent="Walls/Circles" index="683" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2430)
+
+[node name="CircleWall749" parent="Walls/Circles" index="684" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2430)
+
+[node name="CircleWall750" parent="Walls/Circles" index="685" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2380)
+
+[node name="CircleWall751" parent="Walls/Circles" index="686" instance=ExtResource("3_v3ysa")]
+position = Vector2(-60, 2280)
+
+[node name="CircleWall752" parent="Walls/Circles" index="687" instance=ExtResource("3_v3ysa")]
+position = Vector2(60, 2280)
+
+[node name="CircleWall753" parent="Walls/Circles" index="688" instance=ExtResource("3_v3ysa")]
+position = Vector2(120, 2280)
+
+[node name="CircleWall754" parent="Walls/Circles" index="689" instance=ExtResource("3_v3ysa")]
+position = Vector2(180, 2280)
+
+[node name="CircleWall755" parent="Walls/Circles" index="690" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 2330)
+
+[node name="CircleWall756" parent="Walls/Circles" index="691" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 2330)
+
+[node name="CircleWall757" parent="Walls/Circles" index="692" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 2330)
+
+[node name="CircleWall758" parent="Walls/Circles" index="693" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 2330)
+
+[node name="CircleWall759" parent="Walls/Circles" index="694" instance=ExtResource("3_v3ysa")]
+position = Vector2(240, 2280)
+
+[node name="CircleWall760" parent="Walls/Circles" index="695" instance=ExtResource("3_v3ysa")]
+position = Vector2(-240, 2280)
+
+[node name="CircleWall761" parent="Walls/Circles" index="696" instance=ExtResource("3_v3ysa")]
+position = Vector2(-180, 2280)
+
+[node name="CircleWall762" parent="Walls/Circles" index="697" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 2330)
+
+[node name="CircleWall767" parent="Walls/Circles" index="698" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 2330)
+
+[node name="CircleWall768" parent="Walls/Circles" index="699" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 2330)
+
+[node name="CircleWall769" parent="Walls/Circles" index="700" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 2330)
+
+[node name="CircleWall770" parent="Walls/Circles" index="701" instance=ExtResource("3_v3ysa")]
+position = Vector2(-120, 2280)
+
+[node name="CircleWall771" parent="Walls/Circles" index="702" instance=ExtResource("3_v3ysa")]
+position = Vector2(-30, 1630)
+
+[node name="CircleWall772" parent="Walls/Circles" index="703" instance=ExtResource("3_v3ysa")]
+position = Vector2(30, 1630)
+
+[node name="CircleWall773" parent="Walls/Circles" index="704" instance=ExtResource("3_v3ysa")]
+position = Vector2(90, 1630)
+
+[node name="CircleWall774" parent="Walls/Circles" index="705" instance=ExtResource("3_v3ysa")]
+position = Vector2(150, 1630)
+
+[node name="CircleWall775" parent="Walls/Circles" index="706" instance=ExtResource("3_v3ysa")]
+position = Vector2(210, 1630)
+
+[node name="CircleWall776" parent="Walls/Circles" index="707" instance=ExtResource("3_v3ysa")]
+position = Vector2(270, 1630)
+
+[node name="CircleWall777" parent="Walls/Circles" index="708" instance=ExtResource("3_v3ysa")]
+position = Vector2(-270, 1630)
+
+[node name="CircleWall778" parent="Walls/Circles" index="709" instance=ExtResource("3_v3ysa")]
+position = Vector2(-210, 1630)
+
+[node name="CircleWall779" parent="Walls/Circles" index="710" instance=ExtResource("3_v3ysa")]
+position = Vector2(-150, 1630)
+
+[node name="CircleWall780" parent="Walls/Circles" index="711" instance=ExtResource("3_v3ysa")]
+position = Vector2(-90, 1630)
+
+[node name="StaticWall" parent="Walls/Static" index="0" instance=ExtResource("1_kqvht")]
+position = Vector2(-340, 1700)
+scale = Vector2(2, 200)
+size = Vector2(2, 200)
+
+[node name="StaticWall2" parent="Walls/Static" index="1" instance=ExtResource("1_kqvht")]
+position = Vector2(340, 1700)
+scale = Vector2(2, 200)
+size = Vector2(2, 200)
+
+[node name="StaticWall4" parent="Walls/Static" index="2" instance=ExtResource("1_kqvht")]
+position = Vector2(0, 3720)
+scale = Vector2(36, 2)
+size = Vector2(36, 2)
+
+[node name="StaticWall3" parent="Walls/Static" index="3" instance=ExtResource("1_kqvht")]
+position = Vector2(0, -320)
+scale = Vector2(36, 2)
+size = Vector2(36, 2)
+
+[node name="StaticWall5" parent="Walls/Static" index="4" instance=ExtResource("1_kqvht")]
+position = Vector2(-180, 180)
+rotation = 0.785398
+scale = Vector2(22, 1)
+angle = 45.0
+size = Vector2(22, 1)
+
+[node name="StaticWall6" parent="Walls/Static" index="5" instance=ExtResource("1_kqvht")]
+position = Vector2(180, 180)
+rotation = -0.785398
+scale = Vector2(22, 1)
+angle = -45.0
+size = Vector2(22, 1)
+
+[node name="StaticWall9" parent="Walls/Static" index="6" instance=ExtResource("1_kqvht")]
+position = Vector2(-260, 890)
+rotation = 0.785398
+scale = Vector2(10, 1)
+angle = 45.0
+size = Vector2(10, 1)
+
+[node name="StaticWall10" parent="Walls/Static" index="7" instance=ExtResource("1_kqvht")]
+position = Vector2(260, 890)
+rotation = -0.785398
+scale = Vector2(10, 1)
+angle = -45.0
+size = Vector2(10, 1)
+
+[node name="StaticWall7" parent="Walls/Static" index="8" instance=ExtResource("1_kqvht")]
+position = Vector2(30, 430)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall8" parent="Walls/Static" index="9" instance=ExtResource("1_kqvht")]
+position = Vector2(-30, 430)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall11" parent="Walls/Static" index="10" instance=ExtResource("1_kqvht")]
+position = Vector2(30, 1200)
+scale = Vector2(1, 30)
+size = Vector2(1, 30)
+
+[node name="StaticWall12" parent="Walls/Static" index="11" instance=ExtResource("1_kqvht")]
+position = Vector2(-30, 1200)
+scale = Vector2(1, 30)
+size = Vector2(1, 30)
+
+[node name="StaticWall17" parent="Walls/Static" index="12" instance=ExtResource("1_kqvht")]
+position = Vector2(-150, 1310)
+rotation = 1.39626
+scale = Vector2(1, 12)
+angle = 80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall18" parent="Walls/Static" index="13" instance=ExtResource("1_kqvht")]
+position = Vector2(150, 1310)
+rotation = -1.39626
+scale = Vector2(1, 12)
+angle = -80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall21" parent="Walls/Static" index="14" instance=ExtResource("1_kqvht")]
+position = Vector2(-150, 1510)
+rotation = 1.39626
+scale = Vector2(1, 12)
+angle = 80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall22" parent="Walls/Static" index="15" instance=ExtResource("1_kqvht")]
+position = Vector2(150, 1510)
+rotation = -1.39626
+scale = Vector2(1, 12)
+angle = -80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall19" parent="Walls/Static" index="16" instance=ExtResource("1_kqvht")]
+position = Vector2(-210, 1390)
+rotation = -1.39626
+scale = Vector2(1, 12)
+angle = -80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall20" parent="Walls/Static" index="17" instance=ExtResource("1_kqvht")]
+position = Vector2(210, 1390)
+rotation = 1.39626
+scale = Vector2(1, 12)
+angle = 80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall31" parent="Walls/Static" index="18" instance=ExtResource("1_kqvht")]
+position = Vector2(-310, 1680)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall32" parent="Walls/Static" index="19" instance=ExtResource("1_kqvht")]
+position = Vector2(310, 1680)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall33" parent="Walls/Static" index="20" instance=ExtResource("1_kqvht")]
+position = Vector2(-310, 640)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall34" parent="Walls/Static" index="21" instance=ExtResource("1_kqvht")]
+position = Vector2(310, 640)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall35" parent="Walls/Static" index="22" instance=ExtResource("1_kqvht")]
+position = Vector2(-310, 1880)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall36" parent="Walls/Static" index="23" instance=ExtResource("1_kqvht")]
+position = Vector2(310, 1880)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall37" parent="Walls/Static" index="24" instance=ExtResource("1_kqvht")]
+position = Vector2(-310, 2080)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall38" parent="Walls/Static" index="25" instance=ExtResource("1_kqvht")]
+position = Vector2(310, 2080)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall39" parent="Walls/Static" index="26" instance=ExtResource("1_kqvht")]
+position = Vector2(-310, 2280)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall40" parent="Walls/Static" index="27" instance=ExtResource("1_kqvht")]
+position = Vector2(310, 2280)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall23" parent="Walls/Static" index="28" instance=ExtResource("1_kqvht")]
+position = Vector2(-190, 2600)
+rotation = -1.39626
+scale = Vector2(1, 15)
+angle = -80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall24" parent="Walls/Static" index="29" instance=ExtResource("1_kqvht")]
+position = Vector2(190, 2600)
+rotation = 1.39626
+scale = Vector2(1, 15)
+angle = 80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall25" parent="Walls/Static" index="30" instance=ExtResource("1_kqvht")]
+position = Vector2(-190, 2860)
+rotation = -1.39626
+scale = Vector2(1, 15)
+angle = -80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall26" parent="Walls/Static" index="31" instance=ExtResource("1_kqvht")]
+position = Vector2(190, 2860)
+rotation = 1.39626
+scale = Vector2(1, 15)
+angle = 80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall27" parent="Walls/Static" index="32" instance=ExtResource("1_kqvht")]
+position = Vector2(-190, 3120)
+rotation = -1.39626
+scale = Vector2(1, 15)
+angle = -80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall28" parent="Walls/Static" index="33" instance=ExtResource("1_kqvht")]
+position = Vector2(190, 3120)
+rotation = 1.39626
+scale = Vector2(1, 15)
+angle = 80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall29" parent="Walls/Static" index="34" instance=ExtResource("1_kqvht")]
+position = Vector2(-190, 3370)
+rotation = -1.39626
+scale = Vector2(1, 15)
+angle = -80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall30" parent="Walls/Static" index="35" instance=ExtResource("1_kqvht")]
+position = Vector2(190, 3370)
+rotation = 1.39626
+scale = Vector2(1, 15)
+angle = 80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall13" parent="Walls/Static" index="36" instance=ExtResource("1_kqvht")]
+position = Vector2(-90, 1000)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall14" parent="Walls/Static" index="37" instance=ExtResource("1_kqvht")]
+position = Vector2(-150, 1000)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall15" parent="Walls/Static" index="38" instance=ExtResource("1_kqvht")]
+position = Vector2(150, 1000)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall16" parent="Walls/Static" index="39" instance=ExtResource("1_kqvht")]
+position = Vector2(90, 1000)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="RotatingWall" parent="Walls/Rotating" index="0" instance=ExtResource("2_77qt8")]
+position = Vector2(0, 180)
+scale = Vector2(10, 1)
+speed = 10.0
+size = Vector2(10, 1)
+
+[node name="RotatingWall2" parent="Walls/Rotating" index="1" instance=ExtResource("2_77qt8")]
+position = Vector2(-180, 1200)
+scale = Vector2(8, 1)
+speed = -6.0
+size = Vector2(8, 1)
+
+[node name="RotatingWall3" parent="Walls/Rotating" index="2" instance=ExtResource("2_77qt8")]
+position = Vector2(180, 1200)
+scale = Vector2(8, 1)
+speed = 6.0
+size = Vector2(8, 1)
+
+[node name="RotatingWall4" parent="Walls/Rotating" index="3" instance=ExtResource("2_77qt8")]
+position = Vector2(0, 2750)
+rotation = 1.5708
+scale = Vector2(8, 1)
+speed = -6.0
+starting_angle = 90
+size = Vector2(8, 1)
+
+[node name="RotatingWall5" parent="Walls/Rotating" index="4" instance=ExtResource("2_77qt8")]
+position = Vector2(0, 2750)
+scale = Vector2(8, 1)
+speed = -6.0
+size = Vector2(8, 1)
+
+[node name="RotatingWall6" parent="Walls/Rotating" index="5" instance=ExtResource("2_77qt8")]
+position = Vector2(-8.04663e-06, 3020)
+rotation = 1.5708
+scale = Vector2(8, 1)
+speed = 6.0
+starting_angle = 90
+size = Vector2(8, 1)
+
+[node name="RotatingWall7" parent="Walls/Rotating" index="6" instance=ExtResource("2_77qt8")]
+position = Vector2(0, 3020)
+scale = Vector2(8, 1)
+speed = 6.0
+size = Vector2(8, 1)
+
+[node name="RotatingWall8" parent="Walls/Rotating" index="7" instance=ExtResource("2_77qt8")]
+position = Vector2(-8.04663e-06, 3280)
+rotation = 1.5708
+scale = Vector2(8, 1)
+speed = -12.0
+starting_angle = 90
+size = Vector2(8, 1)
+
+[node name="RotatingWall9" parent="Walls/Rotating" index="8" instance=ExtResource("2_77qt8")]
+position = Vector2(0, 3280)
+scale = Vector2(8, 1)
+speed = -12.0
+size = Vector2(8, 1)

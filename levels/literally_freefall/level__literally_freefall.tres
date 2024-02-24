@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://cmw3ra2hv2lng"]
+
+[ext_resource type="PackedScene" uid="uid://30d5pba4hyfp" path="res://levels/literally_freefall/level__literally_freefall.tscn" id="1_hl221"]
+[ext_resource type="Script" path="res://levels/level_data.gd" id="1_vrawd"]
+
+[resource]
+script = ExtResource("1_vrawd")
+title = "Literally Freefall"
+scene = ExtResource("1_hl221")

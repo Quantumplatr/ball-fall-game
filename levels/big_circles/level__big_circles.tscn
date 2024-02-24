@@ -1,0 +1,397 @@
+[gd_scene load_steps=7 format=3 uid="uid://3abyubqwbm3"]
+
+[ext_resource type="PackedScene" uid="uid://cuojibjy6vwck" path="res://levels/base_level.tscn" id="1_nsvg8"]
+[ext_resource type="PackedScene" uid="uid://ctmis2wrcqb4l" path="res://walls/circle/circle_wall.tscn" id="2_0ivh5"]
+[ext_resource type="PackedScene" uid="uid://ojmsdynfnj5g" path="res://walls/static/static_wall.tscn" id="3_34dky"]
+[ext_resource type="PackedScene" uid="uid://c41dptd8s70yf" path="res://walls/rotating/rotating_wall.tscn" id="4_nf5xs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_biy76"]
+size = Vector2(1120, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5026"]
+size = Vector2(90, 600)
+
+[node name="BigCircles" instance=ExtResource("1_nsvg8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start" index="0"]
+shape = SubResource("RectangleShape2D_biy76")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End" index="0"]
+position = Vector2(-45, 5260)
+shape = SubResource("RectangleShape2D_h5026")
+debug_color = Color(0, 0.639216, 0.341176, 0.419608)
+
+[node name="CircleWall" parent="Walls/Circles" index="0" instance=ExtResource("2_0ivh5")]
+position = Vector2(-130, 210)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall25" parent="Walls/Circles" index="1" instance=ExtResource("2_0ivh5")]
+position = Vector2(-560, 210)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall2" parent="Walls/Circles" index="2" instance=ExtResource("2_0ivh5")]
+position = Vector2(130, 360)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall3" parent="Walls/Circles" index="3" instance=ExtResource("2_0ivh5")]
+position = Vector2(-130, 460)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall4" parent="Walls/Circles" index="4" instance=ExtResource("2_0ivh5")]
+position = Vector2(130, 610)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall9" parent="Walls/Circles" index="5" instance=ExtResource("2_0ivh5")]
+position = Vector2(320, 840)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall21" parent="Walls/Circles" index="6" instance=ExtResource("2_0ivh5")]
+position = Vector2(580, 740)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall22" parent="Walls/Circles" index="7" instance=ExtResource("2_0ivh5")]
+position = Vector2(440, 1080)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall27" parent="Walls/Circles" index="8" instance=ExtResource("2_0ivh5")]
+position = Vector2(600, 1260)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall30" parent="Walls/Circles" index="9" instance=ExtResource("2_0ivh5")]
+position = Vector2(470, 1500)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall32" parent="Walls/Circles" index="10" instance=ExtResource("2_0ivh5")]
+position = Vector2(300, 1690)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall23" parent="Walls/Circles" index="11" instance=ExtResource("2_0ivh5")]
+position = Vector2(660, 980)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall24" parent="Walls/Circles" index="12" instance=ExtResource("2_0ivh5")]
+position = Vector2(320, 1310)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall29" parent="Walls/Circles" index="13" instance=ExtResource("2_0ivh5")]
+position = Vector2(150, 1470)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall10" parent="Walls/Circles" index="14" instance=ExtResource("2_0ivh5")]
+position = Vector2(380, 590)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall11" parent="Walls/Circles" index="15" instance=ExtResource("2_0ivh5")]
+position = Vector2(360, 280)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall26" parent="Walls/Circles" index="16" instance=ExtResource("2_0ivh5")]
+position = Vector2(630, 190)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall12" parent="Walls/Circles" index="17" instance=ExtResource("2_0ivh5")]
+position = Vector2(550, 430)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall13" parent="Walls/Circles" index="18" instance=ExtResource("2_0ivh5")]
+position = Vector2(-370, 670)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall14" parent="Walls/Circles" index="19" instance=ExtResource("2_0ivh5")]
+position = Vector2(-340, 340)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall15" parent="Walls/Circles" index="20" instance=ExtResource("2_0ivh5")]
+position = Vector2(-520, 500)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall16" parent="Walls/Circles" index="21" instance=ExtResource("2_0ivh5")]
+position = Vector2(-520, 860)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall17" parent="Walls/Circles" index="22" instance=ExtResource("2_0ivh5")]
+position = Vector2(-420, 1070)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall18" parent="Walls/Circles" index="23" instance=ExtResource("2_0ivh5")]
+position = Vector2(-230, 1210)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall28" parent="Walls/Circles" index="24" instance=ExtResource("2_0ivh5")]
+position = Vector2(-150, 1430)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall31" parent="Walls/Circles" index="25" instance=ExtResource("2_0ivh5")]
+position = Vector2(-20, 1640)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall33" parent="Walls/Circles" index="26" instance=ExtResource("2_0ivh5")]
+position = Vector2(-60, 2140)
+scale = Vector2(30, 30)
+size = Vector2(30, 30)
+
+[node name="CircleWall34" parent="Walls/Circles" index="27" instance=ExtResource("2_0ivh5")]
+position = Vector2(570, 1810)
+scale = Vector2(30, 30)
+size = Vector2(30, 30)
+
+[node name="CircleWall35" parent="Walls/Circles" index="28" instance=ExtResource("2_0ivh5")]
+position = Vector2(570, 2490)
+scale = Vector2(30, 30)
+size = Vector2(30, 30)
+
+[node name="CircleWall36" parent="Walls/Circles" index="29" instance=ExtResource("2_0ivh5")]
+position = Vector2(-60, 2830)
+scale = Vector2(30, 30)
+size = Vector2(30, 30)
+
+[node name="CircleWall37" parent="Walls/Circles" index="30" instance=ExtResource("2_0ivh5")]
+position = Vector2(570, 3180)
+scale = Vector2(30, 30)
+size = Vector2(30, 30)
+
+[node name="CircleWall38" parent="Walls/Circles" index="31" instance=ExtResource("2_0ivh5")]
+position = Vector2(-60, 3560)
+scale = Vector2(30, 30)
+size = Vector2(30, 30)
+
+[node name="CircleWall39" parent="Walls/Circles" index="32" instance=ExtResource("2_0ivh5")]
+position = Vector2(570, 3910)
+scale = Vector2(30, 30)
+size = Vector2(30, 30)
+
+[node name="CircleWall40" parent="Walls/Circles" index="33" instance=ExtResource("2_0ivh5")]
+position = Vector2(500, 4940)
+scale = Vector2(50, 50)
+size = Vector2(50, 50)
+
+[node name="CircleWall41" parent="Walls/Circles" index="34" instance=ExtResource("2_0ivh5")]
+position = Vector2(-590, 4940)
+scale = Vector2(50, 50)
+size = Vector2(50, 50)
+
+[node name="CircleWall19" parent="Walls/Circles" index="35" instance=ExtResource("2_0ivh5")]
+position = Vector2(190, 1100)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall20" parent="Walls/Circles" index="36" instance=ExtResource("2_0ivh5")]
+position = Vector2(20, 1260)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall5" parent="Walls/Circles" index="37" instance=ExtResource("2_0ivh5")]
+position = Vector2(-90, 710)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall8" parent="Walls/Circles" index="38" instance=ExtResource("2_0ivh5")]
+position = Vector2(-280, 890)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall7" parent="Walls/Circles" index="39" instance=ExtResource("2_0ivh5")]
+position = Vector2(-70, 1030)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="CircleWall6" parent="Walls/Circles" index="40" instance=ExtResource("2_0ivh5")]
+position = Vector2(90, 860)
+scale = Vector2(10, 10)
+size = Vector2(10, 10)
+
+[node name="StaticWall" parent="Walls/Static" index="0" instance=ExtResource("3_34dky")]
+position = Vector2(0, -90)
+scale = Vector2(56, 1)
+size = Vector2(56, 1)
+
+[node name="StaticWall2" parent="Walls/Static" index="1" instance=ExtResource("3_34dky")]
+position = Vector2(-570, 100)
+rotation = -1.5708
+scale = Vector2(20, 1)
+angle = -90.0
+size = Vector2(20, 1)
+
+[node name="StaticWall3" parent="Walls/Static" index="2" instance=ExtResource("3_34dky")]
+position = Vector2(-570, 100)
+rotation = -1.5708
+scale = Vector2(20, 1)
+angle = -90.0
+size = Vector2(20, 1)
+
+[node name="StaticWall5" parent="Walls/Static" index="3" instance=ExtResource("3_34dky")]
+position = Vector2(-530, 370)
+rotation = -1.5708
+scale = Vector2(20, 1)
+angle = -90.0
+size = Vector2(20, 1)
+
+[node name="StaticWall6" parent="Walls/Static" index="4" instance=ExtResource("3_34dky")]
+position = Vector2(-530, 690)
+rotation = -1.5708
+scale = Vector2(20, 1)
+angle = -90.0
+size = Vector2(20, 1)
+
+[node name="StaticWall7" parent="Walls/Static" index="5" instance=ExtResource("3_34dky")]
+position = Vector2(-430, 950)
+rotation = -1.8326
+scale = Vector2(10, 1)
+angle = -105.0
+size = Vector2(10, 1)
+
+[node name="StaticWall11" parent="Walls/Static" index="6" instance=ExtResource("3_34dky")]
+position = Vector2(-160, 1300)
+rotation = -1.8326
+scale = Vector2(10, 1)
+angle = -105.0
+size = Vector2(10, 1)
+
+[node name="StaticWall14" parent="Walls/Static" index="7" instance=ExtResource("3_34dky")]
+position = Vector2(-60, 1510)
+rotation = -2.26893
+scale = Vector2(10, 1)
+angle = -130.0
+size = Vector2(10, 1)
+
+[node name="StaticWall16" parent="Walls/Static" index="8" instance=ExtResource("3_34dky")]
+position = Vector2(-50, 2630)
+scale = Vector2(1, 100)
+size = Vector2(1, 100)
+
+[node name="StaticWall17" parent="Walls/Static" index="9" instance=ExtResource("3_34dky")]
+position = Vector2(560, 2840)
+scale = Vector2(1, 100)
+size = Vector2(1, 100)
+
+[node name="StaticWall18" parent="Walls/Static" index="10" instance=ExtResource("3_34dky")]
+position = Vector2(490, 4310)
+scale = Vector2(1, 30)
+size = Vector2(1, 30)
+
+[node name="StaticWall19" parent="Walls/Static" index="11" instance=ExtResource("3_34dky")]
+position = Vector2(-600, 4150)
+scale = Vector2(1, 30)
+size = Vector2(1, 30)
+
+[node name="StaticWall21" parent="Walls/Static" index="12" instance=ExtResource("3_34dky")]
+position = Vector2(10, 5260)
+scale = Vector2(1, 30)
+size = Vector2(1, 30)
+
+[node name="StaticWall23" parent="Walls/Static" index="13" instance=ExtResource("3_34dky")]
+position = Vector2(-45, 5570)
+scale = Vector2(6.5, 1)
+size = Vector2(6.5, 1)
+
+[node name="StaticWall22" parent="Walls/Static" index="14" instance=ExtResource("3_34dky")]
+position = Vector2(-100, 5260)
+scale = Vector2(1, 30)
+size = Vector2(1, 30)
+
+[node name="StaticWall20" parent="Walls/Static" index="15" instance=ExtResource("3_34dky")]
+position = Vector2(-310, 3840)
+rotation = 1.5708
+scale = Vector2(1, 30)
+angle = 90.0
+size = Vector2(1, 30)
+
+[node name="StaticWall4" parent="Walls/Static" index="16" instance=ExtResource("3_34dky")]
+position = Vector2(570, 200)
+rotation = -1.5708
+scale = Vector2(30, 1)
+angle = -90.0
+size = Vector2(30, 1)
+
+[node name="StaticWall8" parent="Walls/Static" index="17" instance=ExtResource("3_34dky")]
+position = Vector2(590, 560)
+rotation = -1.5708
+scale = Vector2(10, 1)
+angle = -90.0
+size = Vector2(10, 1)
+
+[node name="StaticWall9" parent="Walls/Static" index="18" instance=ExtResource("3_34dky")]
+position = Vector2(670, 850)
+rotation = -1.5708
+scale = Vector2(10, 1)
+angle = -90.0
+size = Vector2(10, 1)
+
+[node name="StaticWall10" parent="Walls/Static" index="19" instance=ExtResource("3_34dky")]
+position = Vector2(620, 1120)
+rotation = 1.74533
+scale = Vector2(10, 1)
+angle = 100.0
+size = Vector2(10, 1)
+
+[node name="StaticWall12" parent="Walls/Static" index="20" instance=ExtResource("3_34dky")]
+position = Vector2(510, 1340)
+rotation = 2.18166
+scale = Vector2(10, 1)
+angle = 125.0
+size = Vector2(10, 1)
+
+[node name="StaticWall15" parent="Walls/Static" index="21" instance=ExtResource("3_34dky")]
+position = Vector2(350, 1530)
+rotation = 2.18166
+scale = Vector2(10, 1)
+angle = 125.0
+size = Vector2(10, 1)
+
+[node name="StaticWall13" parent="Walls/Static" index="22" instance=ExtResource("3_34dky")]
+position = Vector2(-300, 1080)
+rotation = 0.523599
+scale = Vector2(10, 1)
+angle = 30.0
+size = Vector2(10, 1)
+
+[node name="RotatingWall" parent="Walls/Rotating" index="0" instance=ExtResource("4_nf5xs")]
+position = Vector2(140, 4620)
+rotation = -48.2329
+scale = Vector2(20, 1)
+speed = -2.0
+size = Vector2(20, 1)
+
+[node name="RotatingWall3" parent="Walls/Rotating" index="1" instance=ExtResource("4_nf5xs")]
+position = Vector2(-40, 4550)
+rotation = -241.169
+scale = Vector2(10, 1)
+speed = -10.0
+size = Vector2(10, 1)
+
+[node name="RotatingWall2" parent="Walls/Rotating" index="2" instance=ExtResource("4_nf5xs")]
+position = Vector2(-230, 4620)
+rotation = 49.8037
+scale = Vector2(20, 1)
+speed = 2.0
+starting_angle = 90
+size = Vector2(20, 1)
+
+[node name="EndZone" parent="." index="3"]
+polygon = PackedVector2Array(-90, 4960, 0, 4960, 0, 5560, -90, 5560)

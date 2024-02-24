@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://6puu81p3ol2g"]
+
+[ext_resource type="Script" path="res://menus/level_select/level_select.gd" id="1_loyla"]
+[ext_resource type="Resource" uid="uid://dxeyxcwayagbf" path="res://levels/some_plinko/level__some_plinko.tres" id="2_yorus"]
+[ext_resource type="Resource" uid="uid://cmw3ra2hv2lng" path="res://levels/literally_freefall/level__literally_freefall.tres" id="3_85qxx"]
+[ext_resource type="PackedScene" uid="uid://cxwyghdvptfn7" path="res://menus/level_select/level_select_btn.tscn" id="3_uiy7p"]
+[ext_resource type="Resource" uid="uid://bm07r2627runt" path="res://levels/big_circles/level__big_circles.tres" id="4_8gfyk"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_loyla")
+level_datas = Array[Resource("res://levels/level_data.gd")]([ExtResource("2_yorus"), ExtResource("3_85qxx"), ExtResource("4_8gfyk")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackBtn" type="Button" parent="MarginContainer/VBoxContainer/Title"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="LvlSlctLbl" type="Label" parent="MarginContainer/VBoxContainer/Title"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level Select"
+horizontal_alignment = 1
+
+[node name="Levels" type="FlowContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="LevelBtn" parent="MarginContainer/VBoxContainer/Levels" instance=ExtResource("3_uiy7p")]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Title/BackBtn" to="." method="_on_back_btn_pressed"]

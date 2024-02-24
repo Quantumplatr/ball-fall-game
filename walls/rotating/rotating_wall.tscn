@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c41dptd8s70yf"]
+
+[ext_resource type="Script" path="res://walls/rotating/rotating_wall.gd" id="1_yyh2s"]
+[ext_resource type="Texture2D" uid="uid://b6hq1asafakhc" path="res://rectangle.png" id="2_a55iw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_76e7c"]
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5sfv"]
+
+[node name="RotatingWall" type="AnimatableBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_76e7c")
+script = ExtResource("1_yyh2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_a55iw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w5sfv")

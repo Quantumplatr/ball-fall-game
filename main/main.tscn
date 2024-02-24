@@ -1,0 +1,220 @@
+[gd_scene load_steps=13 format=3 uid="uid://d8v3sm3vvy4r"]
+
+[ext_resource type="PackedScene" uid="uid://b67y0ogkcv6if" path="res://ball/ball.tscn" id="1_cqm5x"]
+[ext_resource type="Script" path="res://main/main.gd" id="1_uv68p"]
+[ext_resource type="Script" path="res://ball/ball_data.gd" id="2_4xo41"]
+[ext_resource type="PackedScene" uid="uid://ck5lcfuyt3ov" path="res://levels/some_plinko/level__some_plinko.tscn" id="3_6ee02"]
+[ext_resource type="Script" path="res://main/balls_container.gd" id="7_owjqk"]
+[ext_resource type="Script" path="res://main/placement_lbls.gd" id="8_jkm8m"]
+[ext_resource type="Script" path="res://main/win_screen.gd" id="9_13nca"]
+[ext_resource type="Script" path="res://main/camera.gd" id="9_w8ffy"]
+[ext_resource type="Script" path="res://main/pause_menu.gd" id="10_hsatg"]
+[ext_resource type="Script" path="res://main/results.gd" id="11_hsucw"]
+
+[sub_resource type="Resource" id="Resource_62v7b"]
+script = ExtResource("2_4xo41")
+name = "Eef"
+main_color = Color(0, 0.631373, 0.435294, 1)
+trail_start_color = Color(0, 0.545098, 0.701961, 1)
+trail_end_color = Color(0, 0.509804, 0.435294, 0)
+wins = 0
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_jp456"]
+script = ExtResource("2_4xo41")
+name = "Carsen"
+main_color = Color(0.788235, 0.427451, 0.0431373, 1)
+trail_start_color = Color(0.803922, 0.666667, 0.145098, 1)
+trail_end_color = Color(0.913725, 0.686275, 0.615686, 0)
+wins = 0
+won_last = false
+inactive = false
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("results", "balls_container", "placements")]
+script = ExtResource("1_uv68p")
+results = NodePath("Results")
+balls_container = NodePath("Balls")
+placements = NodePath("UI/Margins/TopLeft/Placements")
+
+[node name="Balls" type="Node2D" parent="." node_paths=PackedStringArray("results", "placements")]
+script = ExtResource("7_owjqk")
+results = NodePath("../Results")
+placements = NodePath("../UI/Margins/TopLeft/Placements")
+
+[node name="Ball" parent="Balls" instance=ExtResource("1_cqm5x")]
+ball_data = SubResource("Resource_62v7b")
+
+[node name="Ball2" parent="Balls" instance=ExtResource("1_cqm5x")]
+position = Vector2(40, -40)
+ball_data = SubResource("Resource_jp456")
+
+[node name="Ball3" parent="Balls" instance=ExtResource("1_cqm5x")]
+position = Vector2(110, -70)
+ball_data = SubResource("Resource_jp456")
+
+[node name="Ball4" parent="Balls" instance=ExtResource("1_cqm5x")]
+position = Vector2(-20, -80)
+ball_data = SubResource("Resource_jp456")
+
+[node name="Ball5" parent="Balls" instance=ExtResource("1_cqm5x")]
+position = Vector2(-70, -90)
+ball_data = SubResource("Resource_jp456")
+
+[node name="LevelContainer" type="Node2D" parent="."]
+
+[node name="SomePlinko" parent="LevelContainer" instance=ExtResource("3_6ee02")]
+
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("cam_mode_lbl", "balls_container")]
+zoom = Vector2(0.7, 0.7)
+position_smoothing_speed = 10.0
+script = ExtResource("9_w8ffy")
+cam_mode_lbl = NodePath("../UI/Margins/CamModeLbl")
+balls_container = NodePath("../Balls")
+
+[node name="Results" type="Node" parent="." node_paths=PackedStringArray("balls_container")]
+script = ExtResource("11_hsucw")
+balls_container = NodePath("../Balls")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Margins" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_edit_lock_ = true
+
+[node name="CamModeLbl" type="Label" parent="UI/Margins"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Camera Mode"
+
+[node name="TopLeft" type="HBoxContainer" parent="UI/Margins"]
+layout_mode = 2
+
+[node name="Placements" type="VBoxContainer" parent="UI/Margins/TopLeft" node_paths=PackedStringArray("balls_container", "results")]
+layout_mode = 2
+script = ExtResource("8_jkm8m")
+balls_container = NodePath("../../../../Balls")
+results = NodePath("../../../../Results")
+
+[node name="Label" type="Label" parent="UI/Margins/TopLeft/Placements"]
+layout_mode = 2
+text = "1. Placement"
+
+[node name="Label2" type="Label" parent="UI/Margins/TopLeft/Placements"]
+layout_mode = 2
+text = "1. Placement"
+
+[node name="WinScreen" type="CenterContainer" parent="UI/Margins"]
+visible = false
+layout_mode = 2
+script = ExtResource("9_13nca")
+
+[node name="Bg" type="PanelContainer" parent="UI/Margins/WinScreen"]
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="UI/Margins/WinScreen/Bg"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="UI/Margins/WinScreen/Bg/Margins"]
+layout_mode = 2
+alignment = 1
+
+[node name="GameOverLbl" type="Label" parent="UI/Margins/WinScreen/Bg/Margins/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Headers" type="GridContainer" parent="UI/Margins/WinScreen/Bg/Margins/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="NameHeader" type="Label" parent="UI/Margins/WinScreen/Bg/Margins/VBox/Headers"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ball Name"
+
+[node name="WinsHeader" type="Label" parent="UI/Margins/WinScreen/Bg/Margins/VBox/Headers"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wins"
+
+[node name="Rankings" type="GridContainer" parent="UI/Margins/WinScreen/Bg/Margins/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 2
+
+[node name="Name" type="Label" parent="UI/Margins/WinScreen/Bg/Margins/VBox/Rankings"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1.  First"
+
+[node name="Wins" type="Label" parent="UI/Margins/WinScreen/Bg/Margins/VBox/Rankings"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+
+[node name="Actions" type="HBoxContainer" parent="UI/Margins/WinScreen/Bg/Margins/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayAgainBtn" type="Button" parent="UI/Margins/WinScreen/Bg/Margins/VBox/Actions"]
+layout_mode = 2
+text = "Play Again"
+
+[node name="LevelSelectBtn" type="Button" parent="UI/Margins/WinScreen/Bg/Margins/VBox/Actions"]
+layout_mode = 2
+text = "Level Select"
+
+[node name="PauseMenu" type="CenterContainer" parent="UI/Margins"]
+process_mode = 3
+layout_mode = 2
+script = ExtResource("10_hsatg")
+
+[node name="Bg" type="PanelContainer" parent="UI/Margins/PauseMenu"]
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="UI/Margins/PauseMenu/Bg"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Btns" type="VBoxContainer" parent="UI/Margins/PauseMenu/Bg/Margins"]
+layout_mode = 2
+
+[node name="RestartBtn" type="Button" parent="UI/Margins/PauseMenu/Bg/Margins/Btns"]
+layout_mode = 2
+text = "Restart"
+
+[node name="LvlSelectBtn" type="Button" parent="UI/Margins/PauseMenu/Bg/Margins/Btns"]
+layout_mode = 2
+text = "Level Select"
+
+[node name="QuitBtn" type="Button" parent="UI/Margins/PauseMenu/Bg/Margins/Btns"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="on_game_over" from="Results" to="UI/Margins/WinScreen" method="_on_results_on_game_over"]
+[connection signal="pressed" from="UI/Margins/WinScreen/Bg/Margins/VBox/Actions/PlayAgainBtn" to="UI/Margins/WinScreen" method="_on_play_again_btn_pressed"]
+[connection signal="pressed" from="UI/Margins/WinScreen/Bg/Margins/VBox/Actions/LevelSelectBtn" to="UI/Margins/WinScreen" method="_on_level_select_btn_pressed"]
+[connection signal="on_pause" from="UI/Margins/PauseMenu" to="." method="_on_pause_menu_on_pause"]
+[connection signal="on_play" from="UI/Margins/PauseMenu" to="." method="_on_pause_menu_on_play"]
+[connection signal="pressed" from="UI/Margins/PauseMenu/Bg/Margins/Btns/RestartBtn" to="UI/Margins/PauseMenu" method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="UI/Margins/PauseMenu/Bg/Margins/Btns/LvlSelectBtn" to="UI/Margins/PauseMenu" method="_on_lvl_select_btn_pressed"]
+[connection signal="pressed" from="UI/Margins/PauseMenu/Bg/Margins/Btns/QuitBtn" to="UI/Margins/PauseMenu" method="_on_quit_btn_pressed"]

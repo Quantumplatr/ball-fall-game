@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxwyghdvptfn7"]
+
+[ext_resource type="Texture2D" uid="uid://cxf0838r84iii" path="res://icon.svg" id="1_pp2o4"]
+[ext_resource type="Script" path="res://menus/level_select/level_select_btn.gd" id="2_hcqdp"]
+
+[node name="LvlBtn" type="Button"]
+text = "Test
+"
+icon = ExtResource("1_pp2o4")
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("2_hcqdp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

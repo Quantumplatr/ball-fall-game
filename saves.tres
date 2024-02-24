@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="SavesData" load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://world_data.gd" id="1_fxh60"]
+[ext_resource type="Script" path="res://saves_data.gd" id="1_gh0b6"]
+[ext_resource type="Script" path="res://ball/ball_data.gd" id="1_nim11"]
+
+[sub_resource type="Resource" id="Resource_8lmqq"]
+script = ExtResource("1_nim11")
+name = "Eef"
+main_color = Color(0, 0.831373, 0.654902, 1)
+trail_start_color = Color(0, 0.415686, 0.34902, 1)
+trail_end_color = Color(0.407843, 0.407843, 0.407843, 0)
+wins = 0
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_cfqfp"]
+script = ExtResource("1_nim11")
+name = "Carsen"
+main_color = Color(0.854902, 0.576471, 0.0431373, 1)
+trail_start_color = Color(0.854902, 0.407843, 0.0313726, 0.431373)
+trail_end_color = Color(0.843137, 0.156863, 0.156863, 0.168627)
+wins = 0
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_lfqiw"]
+script = ExtResource("1_fxh60")
+name = "Game Night!!!"
+balls = Array[ExtResource("1_nim11")]([SubResource("Resource_8lmqq"), SubResource("Resource_cfqfp")])
+
+[sub_resource type="Resource" id="Resource_xp4y4"]
+script = ExtResource("1_nim11")
+name = "A"
+main_color = Color(1, 0, 0, 1)
+trail_start_color = Color(1, 0, 0, 0.5)
+trail_end_color = Color(1, 0, 0, 0)
+wins = 34
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_kwlfg"]
+script = ExtResource("1_nim11")
+name = "B"
+main_color = Color(0, 1, 0, 1)
+trail_start_color = Color(0, 1, 0, 0.5)
+trail_end_color = Color(0, 1, 0, 0)
+wins = 12
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_4pvx4"]
+script = ExtResource("1_nim11")
+name = "C"
+main_color = Color(0, 0, 1, 1)
+trail_start_color = Color(0, 0, 1, 0.501961)
+trail_end_color = Color(0, 0, 1, 0)
+wins = 20
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_ktyik"]
+script = ExtResource("1_nim11")
+name = "D"
+main_color = Color(1, 0.4, 0, 1)
+trail_start_color = Color(0, 0, 0, 1)
+trail_end_color = Color(0, 0, 0, 1)
+wins = 3
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_53kw4"]
+script = ExtResource("1_nim11")
+name = "E"
+main_color = Color(0.709804, 0, 1, 1)
+trail_start_color = Color(0, 0, 0, 1)
+trail_end_color = Color(0, 0, 0, 1)
+wins = 4
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_ah8kt"]
+script = ExtResource("1_nim11")
+name = "F"
+main_color = Color(0.788235, 0.337255, 0.45098, 1)
+trail_start_color = Color(0, 0, 0, 1)
+trail_end_color = Color(0, 0, 0, 1)
+wins = 3
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_o4ud5"]
+script = ExtResource("1_fxh60")
+name = "Test Save"
+balls = Array[ExtResource("1_nim11")]([SubResource("Resource_xp4y4"), SubResource("Resource_kwlfg"), SubResource("Resource_4pvx4"), SubResource("Resource_ktyik"), SubResource("Resource_53kw4"), SubResource("Resource_ah8kt")])
+
+[resource]
+script = ExtResource("1_gh0b6")
+saves = Array[ExtResource("1_fxh60")]([SubResource("Resource_lfqiw"), SubResource("Resource_o4ud5")])

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctmis2wrcqb4l"]
+
+[ext_resource type="Script" path="res://walls/circle/circle_wall.gd" id="1_slruu"]
+[ext_resource type="Texture2D" uid="uid://cs64xko6qb2ht" path="res://ball/ball.png" id="1_y8t5i"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cl2sr"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sgk8d"]
+
+[node name="CircleWall" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_cl2sr")
+script = ExtResource("1_slruu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_y8t5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sgk8d")

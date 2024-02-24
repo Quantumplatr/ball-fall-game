@@ -1,0 +1,2586 @@
+[gd_scene load_steps=15 format=3 uid="uid://d8v3sm3vvy4r"]
+
+[ext_resource type="PackedScene" uid="uid://b67y0ogkcv6if" path="res://ball/ball.tscn" id="1_cqm5x"]
+[ext_resource type="Script" path="res://main.gd" id="1_uv68p"]
+[ext_resource type="Script" path="res://ball/ball_data.gd" id="2_4xo41"]
+[ext_resource type="Resource" uid="uid://cpq74eflhqawx" path="res://world_data_test01.tres" id="2_kc1gc"]
+[ext_resource type="PackedScene" uid="uid://ojmsdynfnj5g" path="res://walls/static/static_wall.tscn" id="5_vn4f6"]
+[ext_resource type="PackedScene" uid="uid://c41dptd8s70yf" path="res://walls/rotating/rotating_wall.tscn" id="6_mns3o"]
+[ext_resource type="PackedScene" uid="uid://ctmis2wrcqb4l" path="res://walls/circle/circle_wall.tscn" id="7_ky7as"]
+[ext_resource type="Script" path="res://balls_container.gd" id="7_owjqk"]
+[ext_resource type="Script" path="res://placement_lbls.gd" id="8_jkm8m"]
+[ext_resource type="PackedScene" uid="uid://dhaocfqumbmpk" path="res://areas/end.tscn" id="8_puuk8"]
+[ext_resource type="Script" path="res://camera.gd" id="9_w8ffy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4s7dl"]
+size = Vector2(640, 210)
+
+[sub_resource type="Resource" id="Resource_62v7b"]
+script = ExtResource("2_4xo41")
+name = "Eef"
+main_color = Color(0, 0.631373, 0.435294, 1)
+trail_start_color = Color(0, 0.545098, 0.701961, 1)
+trail_end_color = Color(0, 0.509804, 0.435294, 0)
+wins = 0
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_jp456"]
+script = ExtResource("2_4xo41")
+name = "Carsen"
+main_color = Color(0.788235, 0.427451, 0.0431373, 1)
+trail_start_color = Color(0.803922, 0.666667, 0.145098, 1)
+trail_end_color = Color(0.913725, 0.686275, 0.615686, 0)
+wins = 0
+won_last = false
+inactive = false
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_uv68p")
+world_data = ExtResource("2_kc1gc")
+
+[node name="LevelContainer" type="Node2D" parent="."]
+
+[node name="Level" type="Node2D" parent="LevelContainer"]
+
+[node name="Walls" type="Node2D" parent="LevelContainer/Level"]
+
+[node name="StaticWalls" type="Node2D" parent="LevelContainer/Level/Walls"]
+
+[node name="StaticWall" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-330, 1700)
+scale = Vector2(1, 200)
+size = Vector2(1, 200)
+
+[node name="StaticWall2" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(330, 1700)
+scale = Vector2(1, 200)
+size = Vector2(1, 200)
+
+[node name="StaticWall4" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(0, 3710)
+scale = Vector2(34, 1)
+size = Vector2(34, 1)
+
+[node name="StaticWall3" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(3.05176e-05, -310)
+scale = Vector2(34, 1)
+
+[node name="StaticWall5" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-180, 180)
+rotation = 0.785398
+scale = Vector2(22, 1)
+angle = 45.0
+size = Vector2(22, 1)
+
+[node name="StaticWall6" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(180, 180)
+rotation = -0.785398
+scale = Vector2(22, 1)
+angle = -45.0
+size = Vector2(22, 1)
+
+[node name="StaticWall9" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-260, 890)
+rotation = 0.785398
+scale = Vector2(10, 1)
+angle = 45.0
+size = Vector2(10, 1)
+
+[node name="StaticWall10" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(260, 890)
+rotation = -0.785398
+scale = Vector2(10, 1)
+angle = -45.0
+size = Vector2(10, 1)
+
+[node name="StaticWall7" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(30, 430)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall8" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-30, 430)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall11" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(30, 1200)
+scale = Vector2(1, 30)
+size = Vector2(1, 30)
+
+[node name="StaticWall12" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-30, 1200)
+scale = Vector2(1, 30)
+size = Vector2(1, 30)
+
+[node name="StaticWall17" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-150, 1310)
+rotation = 1.39626
+scale = Vector2(1, 12)
+angle = 80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall18" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(150, 1310)
+rotation = -1.39626
+scale = Vector2(1, 12)
+angle = -80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall21" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-150, 1510)
+rotation = 1.39626
+scale = Vector2(1, 12)
+angle = 80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall22" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(150, 1510)
+rotation = -1.39626
+scale = Vector2(1, 12)
+angle = -80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall19" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-210, 1390)
+rotation = -1.39626
+scale = Vector2(1, 12)
+angle = -80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall20" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(210, 1390)
+rotation = 1.39626
+scale = Vector2(1, 12)
+angle = 80.0
+size = Vector2(1, 12)
+
+[node name="StaticWall31" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-310, 1680)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall32" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(310, 1680)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall33" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-310, 640)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall34" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(310, 640)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall35" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-310, 1880)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall36" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(310, 1880)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall37" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-310, 2080)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall38" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(310, 2080)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall39" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-310, 2280)
+rotation = -0.785398
+scale = Vector2(1, 3)
+angle = -45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall40" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(310, 2280)
+rotation = 0.785398
+scale = Vector2(1, 3)
+angle = 45.0
+size = Vector2(1, 3)
+
+[node name="StaticWall23" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-190, 2600)
+rotation = -1.39626
+scale = Vector2(1, 15)
+angle = -80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall24" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(190, 2600)
+rotation = 1.39626
+scale = Vector2(1, 15)
+angle = 80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall25" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-190, 2860)
+rotation = -1.39626
+scale = Vector2(1, 15)
+angle = -80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall26" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(190, 2860)
+rotation = 1.39626
+scale = Vector2(1, 15)
+angle = 80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall27" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-190, 3120)
+rotation = -1.39626
+scale = Vector2(1, 15)
+angle = -80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall28" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(190, 3120)
+rotation = 1.39626
+scale = Vector2(1, 15)
+angle = 80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall29" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-190, 3370)
+rotation = -1.39626
+scale = Vector2(1, 15)
+angle = -80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall30" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(190, 3370)
+rotation = 1.39626
+scale = Vector2(1, 15)
+angle = 80.0
+size = Vector2(1, 15)
+
+[node name="StaticWall13" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-90, 1000)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall14" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(-150, 1000)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall15" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(150, 1000)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="StaticWall16" parent="LevelContainer/Level/Walls/StaticWalls" instance=ExtResource("5_vn4f6")]
+position = Vector2(90, 1000)
+scale = Vector2(1, 10)
+size = Vector2(1, 10)
+
+[node name="RotatingWalls" type="Node2D" parent="LevelContainer/Level/Walls"]
+
+[node name="RotatingWall" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(0, 180)
+rotation = 6210.73
+scale = Vector2(10, 1)
+speed = 10.0
+size = Vector2(10, 1)
+
+[node name="RotatingWall2" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(-180, 1200)
+rotation = -3728.49
+scale = Vector2(8, 1)
+speed = -6.0
+size = Vector2(8, 1)
+
+[node name="RotatingWall3" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(180, 1200)
+rotation = 3728.49
+scale = Vector2(8, 1)
+speed = 6.0
+size = Vector2(8, 1)
+
+[node name="RotatingWall4" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(0, 2750)
+rotation = -3726.91
+scale = Vector2(8, 1)
+speed = -6.0
+starting_angle = 90
+size = Vector2(8, 1)
+
+[node name="RotatingWall5" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(0, 2750)
+rotation = -3728.49
+scale = Vector2(8, 1)
+speed = -6.0
+size = Vector2(8, 1)
+
+[node name="RotatingWall6" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(-8.04663e-06, 3020)
+rotation = 3730.06
+scale = Vector2(8, 1)
+speed = 6.0
+starting_angle = 90
+size = Vector2(8, 1)
+
+[node name="RotatingWall7" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(0, 3020)
+rotation = 3728.49
+scale = Vector2(8, 1)
+speed = 6.0
+size = Vector2(8, 1)
+
+[node name="RotatingWall8" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(-8.04663e-06, 3280)
+rotation = -7455.4
+scale = Vector2(8, 1)
+speed = -12.0
+starting_angle = 90
+size = Vector2(8, 1)
+
+[node name="RotatingWall9" parent="LevelContainer/Level/Walls/RotatingWalls" instance=ExtResource("6_mns3o")]
+position = Vector2(0, 3280)
+rotation = -7456.97
+scale = Vector2(8, 1)
+speed = -12.0
+size = Vector2(8, 1)
+
+[node name="CircleWalls" type="Node2D" parent="LevelContainer/Level/Walls"]
+
+[node name="CircleWall" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 650)
+
+[node name="CircleWall2" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 700)
+
+[node name="CircleWall3" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 700)
+
+[node name="CircleWall20" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 900)
+
+[node name="CircleWall21" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 900)
+
+[node name="CircleWall4" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 750)
+
+[node name="CircleWall5" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 750)
+
+[node name="CircleWall7" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 800)
+
+[node name="CircleWall8" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 800)
+
+[node name="CircleWall9" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 800)
+
+[node name="CircleWall10" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 800)
+
+[node name="CircleWall16" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 900)
+
+[node name="CircleWall17" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 900)
+
+[node name="CircleWall18" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 900)
+
+[node name="CircleWall19" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 900)
+
+[node name="CircleWall15" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 850)
+
+[node name="CircleWall11" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 850)
+
+[node name="CircleWall12" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 850)
+
+[node name="CircleWall13" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 850)
+
+[node name="CircleWall14" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 850)
+
+[node name="CircleWall6" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 750)
+
+[node name="CircleWall44" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 750)
+
+[node name="CircleWall45" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 750)
+
+[node name="CircleWall46" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 800)
+
+[node name="CircleWall47" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 800)
+
+[node name="CircleWall48" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 800)
+
+[node name="CircleWall54" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 850)
+
+[node name="CircleWall60" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 850)
+
+[node name="CircleWall57" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 850)
+
+[node name="CircleWall58" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 850)
+
+[node name="CircleWall59" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 850)
+
+[node name="CircleWall49" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 750)
+
+[node name="CircleWall38" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 750)
+
+[node name="CircleWall39" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 750)
+
+[node name="CircleWall40" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 800)
+
+[node name="CircleWall41" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 800)
+
+[node name="CircleWall42" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 800)
+
+[node name="CircleWall43" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 750)
+
+[node name="CircleWall36" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 650)
+
+[node name="CircleWall37" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 650)
+
+[node name="CircleWall22" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 650)
+
+[node name="CircleWall23" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 650)
+
+[node name="CircleWall24" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 700)
+
+[node name="CircleWall25" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 700)
+
+[node name="CircleWall26" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 700)
+
+[node name="CircleWall27" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 700)
+
+[node name="CircleWall28" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 650)
+
+[node name="CircleWall29" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 650)
+
+[node name="CircleWall30" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 650)
+
+[node name="CircleWall31" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 700)
+
+[node name="CircleWall32" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 700)
+
+[node name="CircleWall33" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 700)
+
+[node name="CircleWall34" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 700)
+
+[node name="CircleWall35" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 650)
+
+[node name="CircleWall55" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 600)
+
+[node name="CircleWall56" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 600)
+
+[node name="CircleWall61" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 600)
+
+[node name="CircleWall62" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 600)
+
+[node name="CircleWall63" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 600)
+
+[node name="CircleWall64" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 600)
+
+[node name="CircleWall68" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 600)
+
+[node name="CircleWall71" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 600)
+
+[node name="CircleWall72" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 600)
+
+[node name="CircleWall73" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 600)
+
+[node name="CircleWall65" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1680)
+
+[node name="CircleWall66" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1730)
+
+[node name="CircleWall67" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1730)
+
+[node name="CircleWall69" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1780)
+
+[node name="CircleWall70" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1780)
+
+[node name="CircleWall74" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1830)
+
+[node name="CircleWall75" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1830)
+
+[node name="CircleWall76" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1830)
+
+[node name="CircleWall77" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1830)
+
+[node name="CircleWall78" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1780)
+
+[node name="CircleWall79" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1780)
+
+[node name="CircleWall80" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1780)
+
+[node name="CircleWall81" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1830)
+
+[node name="CircleWall82" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1830)
+
+[node name="CircleWall83" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1830)
+
+[node name="CircleWall84" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1780)
+
+[node name="CircleWall85" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1780)
+
+[node name="CircleWall86" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1780)
+
+[node name="CircleWall87" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1830)
+
+[node name="CircleWall88" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1830)
+
+[node name="CircleWall89" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1830)
+
+[node name="CircleWall90" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1780)
+
+[node name="CircleWall91" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1680)
+
+[node name="CircleWall92" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1680)
+
+[node name="CircleWall93" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1680)
+
+[node name="CircleWall94" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1680)
+
+[node name="CircleWall95" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1730)
+
+[node name="CircleWall96" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1730)
+
+[node name="CircleWall97" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1730)
+
+[node name="CircleWall98" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1730)
+
+[node name="CircleWall99" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1680)
+
+[node name="CircleWall100" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1680)
+
+[node name="CircleWall101" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1680)
+
+[node name="CircleWall102" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1730)
+
+[node name="CircleWall107" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1730)
+
+[node name="CircleWall108" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1730)
+
+[node name="CircleWall109" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1730)
+
+[node name="CircleWall110" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1680)
+
+[node name="CircleWall111" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1630)
+
+[node name="CircleWall112" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1630)
+
+[node name="CircleWall113" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1630)
+
+[node name="CircleWall114" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1630)
+
+[node name="CircleWall115" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1630)
+
+[node name="CircleWall116" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1630)
+
+[node name="CircleWall117" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1630)
+
+[node name="CircleWall118" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1630)
+
+[node name="CircleWall119" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1630)
+
+[node name="CircleWall120" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1630)
+
+[node name="CircleWall121" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1680)
+
+[node name="CircleWall122" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1730)
+
+[node name="CircleWall123" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1730)
+
+[node name="CircleWall124" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1780)
+
+[node name="CircleWall125" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1780)
+
+[node name="CircleWall126" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1830)
+
+[node name="CircleWall127" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1830)
+
+[node name="CircleWall128" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1830)
+
+[node name="CircleWall129" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1830)
+
+[node name="CircleWall130" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1780)
+
+[node name="CircleWall131" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1780)
+
+[node name="CircleWall132" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1780)
+
+[node name="CircleWall133" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1830)
+
+[node name="CircleWall134" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1830)
+
+[node name="CircleWall135" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1830)
+
+[node name="CircleWall136" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1780)
+
+[node name="CircleWall137" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1780)
+
+[node name="CircleWall138" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1780)
+
+[node name="CircleWall139" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1830)
+
+[node name="CircleWall140" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1830)
+
+[node name="CircleWall141" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1830)
+
+[node name="CircleWall142" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1780)
+
+[node name="CircleWall143" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1680)
+
+[node name="CircleWall144" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1680)
+
+[node name="CircleWall145" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1680)
+
+[node name="CircleWall146" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1680)
+
+[node name="CircleWall147" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1730)
+
+[node name="CircleWall148" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1730)
+
+[node name="CircleWall149" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1730)
+
+[node name="CircleWall150" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1730)
+
+[node name="CircleWall151" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1680)
+
+[node name="CircleWall152" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1680)
+
+[node name="CircleWall153" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1680)
+
+[node name="CircleWall154" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1730)
+
+[node name="CircleWall159" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1730)
+
+[node name="CircleWall160" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1730)
+
+[node name="CircleWall161" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1730)
+
+[node name="CircleWall162" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1680)
+
+[node name="CircleWall163" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1880)
+
+[node name="CircleWall164" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1930)
+
+[node name="CircleWall165" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1930)
+
+[node name="CircleWall166" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1980)
+
+[node name="CircleWall167" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1980)
+
+[node name="CircleWall168" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2030)
+
+[node name="CircleWall169" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2030)
+
+[node name="CircleWall170" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2030)
+
+[node name="CircleWall171" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2030)
+
+[node name="CircleWall172" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1980)
+
+[node name="CircleWall173" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1980)
+
+[node name="CircleWall174" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1980)
+
+[node name="CircleWall175" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2030)
+
+[node name="CircleWall176" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2030)
+
+[node name="CircleWall177" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2030)
+
+[node name="CircleWall178" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1980)
+
+[node name="CircleWall179" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1980)
+
+[node name="CircleWall180" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1980)
+
+[node name="CircleWall181" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2030)
+
+[node name="CircleWall182" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2030)
+
+[node name="CircleWall183" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2030)
+
+[node name="CircleWall184" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1980)
+
+[node name="CircleWall185" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1880)
+
+[node name="CircleWall186" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1880)
+
+[node name="CircleWall187" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1880)
+
+[node name="CircleWall188" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1880)
+
+[node name="CircleWall189" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1930)
+
+[node name="CircleWall190" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1930)
+
+[node name="CircleWall191" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1930)
+
+[node name="CircleWall192" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1930)
+
+[node name="CircleWall193" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1880)
+
+[node name="CircleWall194" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1880)
+
+[node name="CircleWall195" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1880)
+
+[node name="CircleWall196" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1930)
+
+[node name="CircleWall201" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1930)
+
+[node name="CircleWall202" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1930)
+
+[node name="CircleWall203" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1930)
+
+[node name="CircleWall204" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1880)
+
+[node name="CircleWall205" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1880)
+
+[node name="CircleWall206" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1930)
+
+[node name="CircleWall207" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1930)
+
+[node name="CircleWall208" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1980)
+
+[node name="CircleWall209" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1980)
+
+[node name="CircleWall210" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2030)
+
+[node name="CircleWall211" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2030)
+
+[node name="CircleWall212" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2030)
+
+[node name="CircleWall213" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2030)
+
+[node name="CircleWall214" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1980)
+
+[node name="CircleWall215" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1980)
+
+[node name="CircleWall216" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1980)
+
+[node name="CircleWall217" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2030)
+
+[node name="CircleWall218" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2030)
+
+[node name="CircleWall219" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2030)
+
+[node name="CircleWall220" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1980)
+
+[node name="CircleWall221" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1980)
+
+[node name="CircleWall222" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1980)
+
+[node name="CircleWall223" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2030)
+
+[node name="CircleWall224" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2030)
+
+[node name="CircleWall225" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2030)
+
+[node name="CircleWall226" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1980)
+
+[node name="CircleWall227" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1880)
+
+[node name="CircleWall228" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1880)
+
+[node name="CircleWall229" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1880)
+
+[node name="CircleWall230" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1880)
+
+[node name="CircleWall231" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1930)
+
+[node name="CircleWall232" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1930)
+
+[node name="CircleWall233" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1930)
+
+[node name="CircleWall234" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1930)
+
+[node name="CircleWall235" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1880)
+
+[node name="CircleWall236" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1880)
+
+[node name="CircleWall237" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1880)
+
+[node name="CircleWall238" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1930)
+
+[node name="CircleWall243" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1930)
+
+[node name="CircleWall244" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1930)
+
+[node name="CircleWall245" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1930)
+
+[node name="CircleWall246" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1880)
+
+[node name="CircleWall247" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1630)
+
+[node name="CircleWall248" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1630)
+
+[node name="CircleWall249" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1630)
+
+[node name="CircleWall250" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1630)
+
+[node name="CircleWall251" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1630)
+
+[node name="CircleWall252" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1630)
+
+[node name="CircleWall253" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1630)
+
+[node name="CircleWall254" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1630)
+
+[node name="CircleWall255" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1630)
+
+[node name="CircleWall256" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1630)
+
+[node name="CircleWall257" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1680)
+
+[node name="CircleWall258" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1730)
+
+[node name="CircleWall259" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1730)
+
+[node name="CircleWall260" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1780)
+
+[node name="CircleWall261" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1780)
+
+[node name="CircleWall262" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1830)
+
+[node name="CircleWall263" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1830)
+
+[node name="CircleWall264" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1830)
+
+[node name="CircleWall265" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1830)
+
+[node name="CircleWall266" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1780)
+
+[node name="CircleWall267" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1780)
+
+[node name="CircleWall268" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1780)
+
+[node name="CircleWall269" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1830)
+
+[node name="CircleWall270" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1830)
+
+[node name="CircleWall271" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1830)
+
+[node name="CircleWall272" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1780)
+
+[node name="CircleWall273" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1780)
+
+[node name="CircleWall274" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1780)
+
+[node name="CircleWall275" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1830)
+
+[node name="CircleWall276" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1830)
+
+[node name="CircleWall277" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1830)
+
+[node name="CircleWall278" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1780)
+
+[node name="CircleWall279" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1680)
+
+[node name="CircleWall280" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1680)
+
+[node name="CircleWall281" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1680)
+
+[node name="CircleWall282" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1680)
+
+[node name="CircleWall283" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1730)
+
+[node name="CircleWall284" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1730)
+
+[node name="CircleWall285" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1730)
+
+[node name="CircleWall286" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1730)
+
+[node name="CircleWall287" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1680)
+
+[node name="CircleWall288" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1680)
+
+[node name="CircleWall289" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1680)
+
+[node name="CircleWall290" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1730)
+
+[node name="CircleWall295" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1730)
+
+[node name="CircleWall296" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1730)
+
+[node name="CircleWall297" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1730)
+
+[node name="CircleWall298" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1680)
+
+[node name="CircleWall299" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1630)
+
+[node name="CircleWall300" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1630)
+
+[node name="CircleWall301" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1630)
+
+[node name="CircleWall302" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1630)
+
+[node name="CircleWall303" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1630)
+
+[node name="CircleWall304" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1630)
+
+[node name="CircleWall305" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1630)
+
+[node name="CircleWall306" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1630)
+
+[node name="CircleWall307" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1630)
+
+[node name="CircleWall308" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1630)
+
+[node name="CircleWall309" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1680)
+
+[node name="CircleWall310" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1730)
+
+[node name="CircleWall311" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1730)
+
+[node name="CircleWall312" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1780)
+
+[node name="CircleWall313" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1780)
+
+[node name="CircleWall314" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1830)
+
+[node name="CircleWall315" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1830)
+
+[node name="CircleWall316" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1830)
+
+[node name="CircleWall317" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1830)
+
+[node name="CircleWall318" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1780)
+
+[node name="CircleWall319" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1780)
+
+[node name="CircleWall320" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1780)
+
+[node name="CircleWall321" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1830)
+
+[node name="CircleWall322" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1830)
+
+[node name="CircleWall323" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1830)
+
+[node name="CircleWall324" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1780)
+
+[node name="CircleWall325" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1780)
+
+[node name="CircleWall326" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1780)
+
+[node name="CircleWall327" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1830)
+
+[node name="CircleWall328" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1830)
+
+[node name="CircleWall329" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1830)
+
+[node name="CircleWall330" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1780)
+
+[node name="CircleWall331" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1680)
+
+[node name="CircleWall332" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1680)
+
+[node name="CircleWall333" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1680)
+
+[node name="CircleWall334" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1680)
+
+[node name="CircleWall335" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1730)
+
+[node name="CircleWall336" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1730)
+
+[node name="CircleWall337" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1730)
+
+[node name="CircleWall338" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1730)
+
+[node name="CircleWall339" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1680)
+
+[node name="CircleWall340" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1680)
+
+[node name="CircleWall341" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1680)
+
+[node name="CircleWall342" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1730)
+
+[node name="CircleWall347" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1730)
+
+[node name="CircleWall348" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1730)
+
+[node name="CircleWall349" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1730)
+
+[node name="CircleWall350" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1680)
+
+[node name="CircleWall351" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1880)
+
+[node name="CircleWall352" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1930)
+
+[node name="CircleWall353" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1930)
+
+[node name="CircleWall354" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1980)
+
+[node name="CircleWall355" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1980)
+
+[node name="CircleWall356" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2030)
+
+[node name="CircleWall357" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2030)
+
+[node name="CircleWall358" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2030)
+
+[node name="CircleWall359" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2030)
+
+[node name="CircleWall360" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1980)
+
+[node name="CircleWall361" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1980)
+
+[node name="CircleWall362" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1980)
+
+[node name="CircleWall363" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2030)
+
+[node name="CircleWall364" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2030)
+
+[node name="CircleWall365" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2030)
+
+[node name="CircleWall366" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1980)
+
+[node name="CircleWall367" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1980)
+
+[node name="CircleWall368" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1980)
+
+[node name="CircleWall369" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2030)
+
+[node name="CircleWall370" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2030)
+
+[node name="CircleWall371" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2030)
+
+[node name="CircleWall372" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1980)
+
+[node name="CircleWall373" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1880)
+
+[node name="CircleWall374" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1880)
+
+[node name="CircleWall375" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1880)
+
+[node name="CircleWall376" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1880)
+
+[node name="CircleWall377" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1930)
+
+[node name="CircleWall378" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1930)
+
+[node name="CircleWall379" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1930)
+
+[node name="CircleWall380" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1930)
+
+[node name="CircleWall381" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1880)
+
+[node name="CircleWall382" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1880)
+
+[node name="CircleWall383" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1880)
+
+[node name="CircleWall384" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1930)
+
+[node name="CircleWall389" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1930)
+
+[node name="CircleWall390" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1930)
+
+[node name="CircleWall391" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1930)
+
+[node name="CircleWall392" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1880)
+
+[node name="CircleWall393" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1880)
+
+[node name="CircleWall394" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1930)
+
+[node name="CircleWall395" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1930)
+
+[node name="CircleWall396" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1980)
+
+[node name="CircleWall397" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 1980)
+
+[node name="CircleWall398" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2030)
+
+[node name="CircleWall399" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2030)
+
+[node name="CircleWall400" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2030)
+
+[node name="CircleWall401" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2030)
+
+[node name="CircleWall402" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1980)
+
+[node name="CircleWall403" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1980)
+
+[node name="CircleWall404" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1980)
+
+[node name="CircleWall405" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2030)
+
+[node name="CircleWall406" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2030)
+
+[node name="CircleWall407" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2030)
+
+[node name="CircleWall408" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1980)
+
+[node name="CircleWall409" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1980)
+
+[node name="CircleWall410" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1980)
+
+[node name="CircleWall411" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2030)
+
+[node name="CircleWall412" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2030)
+
+[node name="CircleWall413" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2030)
+
+[node name="CircleWall414" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1980)
+
+[node name="CircleWall415" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 1880)
+
+[node name="CircleWall416" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 1880)
+
+[node name="CircleWall417" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 1880)
+
+[node name="CircleWall418" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 1880)
+
+[node name="CircleWall419" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1930)
+
+[node name="CircleWall420" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1930)
+
+[node name="CircleWall421" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1930)
+
+[node name="CircleWall422" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1930)
+
+[node name="CircleWall423" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 1880)
+
+[node name="CircleWall424" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 1880)
+
+[node name="CircleWall425" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 1880)
+
+[node name="CircleWall426" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1930)
+
+[node name="CircleWall431" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1930)
+
+[node name="CircleWall432" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1930)
+
+[node name="CircleWall433" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1930)
+
+[node name="CircleWall434" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 1880)
+
+[node name="CircleWall435" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2080)
+
+[node name="CircleWall436" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2130)
+
+[node name="CircleWall437" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2130)
+
+[node name="CircleWall438" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2180)
+
+[node name="CircleWall439" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2180)
+
+[node name="CircleWall440" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2230)
+
+[node name="CircleWall441" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2230)
+
+[node name="CircleWall442" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2230)
+
+[node name="CircleWall443" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2230)
+
+[node name="CircleWall444" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2180)
+
+[node name="CircleWall445" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2180)
+
+[node name="CircleWall446" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2180)
+
+[node name="CircleWall447" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2230)
+
+[node name="CircleWall448" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2230)
+
+[node name="CircleWall449" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2230)
+
+[node name="CircleWall450" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2180)
+
+[node name="CircleWall451" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2180)
+
+[node name="CircleWall452" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2180)
+
+[node name="CircleWall453" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2230)
+
+[node name="CircleWall454" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2230)
+
+[node name="CircleWall455" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2230)
+
+[node name="CircleWall456" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2180)
+
+[node name="CircleWall457" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2080)
+
+[node name="CircleWall458" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2080)
+
+[node name="CircleWall459" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2080)
+
+[node name="CircleWall460" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2080)
+
+[node name="CircleWall461" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2130)
+
+[node name="CircleWall462" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2130)
+
+[node name="CircleWall463" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2130)
+
+[node name="CircleWall464" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2130)
+
+[node name="CircleWall465" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2080)
+
+[node name="CircleWall466" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2080)
+
+[node name="CircleWall467" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2080)
+
+[node name="CircleWall468" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2130)
+
+[node name="CircleWall473" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2130)
+
+[node name="CircleWall474" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2130)
+
+[node name="CircleWall475" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2130)
+
+[node name="CircleWall476" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2080)
+
+[node name="CircleWall477" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2080)
+
+[node name="CircleWall478" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2130)
+
+[node name="CircleWall479" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2130)
+
+[node name="CircleWall480" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2180)
+
+[node name="CircleWall481" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2180)
+
+[node name="CircleWall482" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2230)
+
+[node name="CircleWall483" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2230)
+
+[node name="CircleWall484" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2230)
+
+[node name="CircleWall485" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2230)
+
+[node name="CircleWall486" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2180)
+
+[node name="CircleWall487" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2180)
+
+[node name="CircleWall488" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2180)
+
+[node name="CircleWall489" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2230)
+
+[node name="CircleWall490" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2230)
+
+[node name="CircleWall491" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2230)
+
+[node name="CircleWall492" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2180)
+
+[node name="CircleWall493" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2180)
+
+[node name="CircleWall494" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2180)
+
+[node name="CircleWall495" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2230)
+
+[node name="CircleWall496" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2230)
+
+[node name="CircleWall497" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2230)
+
+[node name="CircleWall498" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2180)
+
+[node name="CircleWall499" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2080)
+
+[node name="CircleWall500" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2080)
+
+[node name="CircleWall501" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2080)
+
+[node name="CircleWall502" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2080)
+
+[node name="CircleWall503" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2130)
+
+[node name="CircleWall504" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2130)
+
+[node name="CircleWall505" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2130)
+
+[node name="CircleWall506" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2130)
+
+[node name="CircleWall507" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2080)
+
+[node name="CircleWall508" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2080)
+
+[node name="CircleWall509" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2080)
+
+[node name="CircleWall510" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2130)
+
+[node name="CircleWall515" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2130)
+
+[node name="CircleWall516" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2130)
+
+[node name="CircleWall517" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2130)
+
+[node name="CircleWall518" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2080)
+
+[node name="CircleWall519" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2280)
+
+[node name="CircleWall520" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2330)
+
+[node name="CircleWall521" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2330)
+
+[node name="CircleWall522" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2380)
+
+[node name="CircleWall523" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2380)
+
+[node name="CircleWall524" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2430)
+
+[node name="CircleWall525" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2430)
+
+[node name="CircleWall526" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2430)
+
+[node name="CircleWall527" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2430)
+
+[node name="CircleWall528" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2380)
+
+[node name="CircleWall529" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2380)
+
+[node name="CircleWall530" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2380)
+
+[node name="CircleWall531" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2430)
+
+[node name="CircleWall532" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2430)
+
+[node name="CircleWall533" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2430)
+
+[node name="CircleWall534" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2380)
+
+[node name="CircleWall535" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2380)
+
+[node name="CircleWall536" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2380)
+
+[node name="CircleWall537" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2430)
+
+[node name="CircleWall538" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2430)
+
+[node name="CircleWall539" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2430)
+
+[node name="CircleWall540" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2380)
+
+[node name="CircleWall541" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2280)
+
+[node name="CircleWall542" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2280)
+
+[node name="CircleWall543" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2280)
+
+[node name="CircleWall544" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2280)
+
+[node name="CircleWall545" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2330)
+
+[node name="CircleWall546" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2330)
+
+[node name="CircleWall547" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2330)
+
+[node name="CircleWall548" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2330)
+
+[node name="CircleWall549" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2280)
+
+[node name="CircleWall550" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2280)
+
+[node name="CircleWall551" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2280)
+
+[node name="CircleWall552" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2330)
+
+[node name="CircleWall557" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2330)
+
+[node name="CircleWall558" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2330)
+
+[node name="CircleWall559" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2330)
+
+[node name="CircleWall560" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2280)
+
+[node name="CircleWall561" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2280)
+
+[node name="CircleWall562" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2330)
+
+[node name="CircleWall563" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2330)
+
+[node name="CircleWall564" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2380)
+
+[node name="CircleWall565" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2380)
+
+[node name="CircleWall566" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2430)
+
+[node name="CircleWall567" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2430)
+
+[node name="CircleWall568" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2430)
+
+[node name="CircleWall569" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2430)
+
+[node name="CircleWall570" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2380)
+
+[node name="CircleWall571" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2380)
+
+[node name="CircleWall572" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2380)
+
+[node name="CircleWall573" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2430)
+
+[node name="CircleWall574" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2430)
+
+[node name="CircleWall575" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2430)
+
+[node name="CircleWall576" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2380)
+
+[node name="CircleWall577" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2380)
+
+[node name="CircleWall578" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2380)
+
+[node name="CircleWall579" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2430)
+
+[node name="CircleWall580" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2430)
+
+[node name="CircleWall581" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2430)
+
+[node name="CircleWall582" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2380)
+
+[node name="CircleWall583" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2280)
+
+[node name="CircleWall584" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2280)
+
+[node name="CircleWall585" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2280)
+
+[node name="CircleWall586" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2280)
+
+[node name="CircleWall587" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2330)
+
+[node name="CircleWall588" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2330)
+
+[node name="CircleWall589" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2330)
+
+[node name="CircleWall590" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2330)
+
+[node name="CircleWall591" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2280)
+
+[node name="CircleWall592" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2280)
+
+[node name="CircleWall593" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2280)
+
+[node name="CircleWall594" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2330)
+
+[node name="CircleWall599" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2330)
+
+[node name="CircleWall600" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2330)
+
+[node name="CircleWall601" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2330)
+
+[node name="CircleWall602" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2280)
+
+[node name="CircleWall603" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2080)
+
+[node name="CircleWall604" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2130)
+
+[node name="CircleWall605" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2130)
+
+[node name="CircleWall606" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2180)
+
+[node name="CircleWall607" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2180)
+
+[node name="CircleWall608" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2230)
+
+[node name="CircleWall609" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2230)
+
+[node name="CircleWall610" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2230)
+
+[node name="CircleWall611" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2230)
+
+[node name="CircleWall612" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2180)
+
+[node name="CircleWall613" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2180)
+
+[node name="CircleWall614" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2180)
+
+[node name="CircleWall615" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2230)
+
+[node name="CircleWall616" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2230)
+
+[node name="CircleWall617" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2230)
+
+[node name="CircleWall618" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2180)
+
+[node name="CircleWall619" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2180)
+
+[node name="CircleWall620" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2180)
+
+[node name="CircleWall621" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2230)
+
+[node name="CircleWall622" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2230)
+
+[node name="CircleWall623" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2230)
+
+[node name="CircleWall624" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2180)
+
+[node name="CircleWall625" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2080)
+
+[node name="CircleWall626" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2080)
+
+[node name="CircleWall627" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2080)
+
+[node name="CircleWall628" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2080)
+
+[node name="CircleWall629" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2130)
+
+[node name="CircleWall630" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2130)
+
+[node name="CircleWall631" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2130)
+
+[node name="CircleWall632" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2130)
+
+[node name="CircleWall633" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2080)
+
+[node name="CircleWall634" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2080)
+
+[node name="CircleWall635" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2080)
+
+[node name="CircleWall636" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2130)
+
+[node name="CircleWall641" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2130)
+
+[node name="CircleWall642" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2130)
+
+[node name="CircleWall643" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2130)
+
+[node name="CircleWall644" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2080)
+
+[node name="CircleWall645" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2080)
+
+[node name="CircleWall646" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2130)
+
+[node name="CircleWall647" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2130)
+
+[node name="CircleWall648" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2180)
+
+[node name="CircleWall649" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2180)
+
+[node name="CircleWall650" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2230)
+
+[node name="CircleWall651" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2230)
+
+[node name="CircleWall652" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2230)
+
+[node name="CircleWall653" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2230)
+
+[node name="CircleWall654" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2180)
+
+[node name="CircleWall655" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2180)
+
+[node name="CircleWall656" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2180)
+
+[node name="CircleWall657" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2230)
+
+[node name="CircleWall658" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2230)
+
+[node name="CircleWall659" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2230)
+
+[node name="CircleWall660" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2180)
+
+[node name="CircleWall661" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2180)
+
+[node name="CircleWall662" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2180)
+
+[node name="CircleWall663" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2230)
+
+[node name="CircleWall664" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2230)
+
+[node name="CircleWall665" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2230)
+
+[node name="CircleWall666" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2180)
+
+[node name="CircleWall667" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2080)
+
+[node name="CircleWall668" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2080)
+
+[node name="CircleWall669" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2080)
+
+[node name="CircleWall670" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2080)
+
+[node name="CircleWall671" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2130)
+
+[node name="CircleWall672" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2130)
+
+[node name="CircleWall673" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2130)
+
+[node name="CircleWall674" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2130)
+
+[node name="CircleWall675" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2080)
+
+[node name="CircleWall676" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2080)
+
+[node name="CircleWall677" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2080)
+
+[node name="CircleWall678" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2130)
+
+[node name="CircleWall683" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2130)
+
+[node name="CircleWall684" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2130)
+
+[node name="CircleWall685" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2130)
+
+[node name="CircleWall686" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2080)
+
+[node name="CircleWall687" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2280)
+
+[node name="CircleWall688" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2330)
+
+[node name="CircleWall689" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2330)
+
+[node name="CircleWall690" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2380)
+
+[node name="CircleWall691" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2380)
+
+[node name="CircleWall692" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2430)
+
+[node name="CircleWall693" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2430)
+
+[node name="CircleWall694" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2430)
+
+[node name="CircleWall695" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2430)
+
+[node name="CircleWall696" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2380)
+
+[node name="CircleWall697" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2380)
+
+[node name="CircleWall698" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2380)
+
+[node name="CircleWall699" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2430)
+
+[node name="CircleWall700" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2430)
+
+[node name="CircleWall701" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2430)
+
+[node name="CircleWall702" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2380)
+
+[node name="CircleWall703" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2380)
+
+[node name="CircleWall704" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2380)
+
+[node name="CircleWall705" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2430)
+
+[node name="CircleWall706" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2430)
+
+[node name="CircleWall707" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2430)
+
+[node name="CircleWall708" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2380)
+
+[node name="CircleWall709" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2280)
+
+[node name="CircleWall710" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2280)
+
+[node name="CircleWall711" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2280)
+
+[node name="CircleWall712" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2280)
+
+[node name="CircleWall713" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2330)
+
+[node name="CircleWall714" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2330)
+
+[node name="CircleWall715" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2330)
+
+[node name="CircleWall716" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2330)
+
+[node name="CircleWall717" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2280)
+
+[node name="CircleWall718" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2280)
+
+[node name="CircleWall719" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2280)
+
+[node name="CircleWall720" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2330)
+
+[node name="CircleWall725" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2330)
+
+[node name="CircleWall726" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2330)
+
+[node name="CircleWall727" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2330)
+
+[node name="CircleWall728" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2280)
+
+[node name="CircleWall729" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2280)
+
+[node name="CircleWall730" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2330)
+
+[node name="CircleWall731" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2330)
+
+[node name="CircleWall732" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2380)
+
+[node name="CircleWall733" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(0, 2380)
+
+[node name="CircleWall734" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2430)
+
+[node name="CircleWall735" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 2430)
+
+[node name="CircleWall736" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 2430)
+
+[node name="CircleWall737" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2430)
+
+[node name="CircleWall738" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2380)
+
+[node name="CircleWall739" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2380)
+
+[node name="CircleWall740" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2380)
+
+[node name="CircleWall741" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2430)
+
+[node name="CircleWall742" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2430)
+
+[node name="CircleWall743" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2430)
+
+[node name="CircleWall744" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2380)
+
+[node name="CircleWall745" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2380)
+
+[node name="CircleWall746" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2380)
+
+[node name="CircleWall747" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2430)
+
+[node name="CircleWall748" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2430)
+
+[node name="CircleWall749" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2430)
+
+[node name="CircleWall750" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2380)
+
+[node name="CircleWall751" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-60, 2280)
+
+[node name="CircleWall752" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(60, 2280)
+
+[node name="CircleWall753" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(120, 2280)
+
+[node name="CircleWall754" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(180, 2280)
+
+[node name="CircleWall755" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 2330)
+
+[node name="CircleWall756" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 2330)
+
+[node name="CircleWall757" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 2330)
+
+[node name="CircleWall758" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 2330)
+
+[node name="CircleWall759" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(240, 2280)
+
+[node name="CircleWall760" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-240, 2280)
+
+[node name="CircleWall761" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-180, 2280)
+
+[node name="CircleWall762" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 2330)
+
+[node name="CircleWall767" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 2330)
+
+[node name="CircleWall768" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 2330)
+
+[node name="CircleWall769" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 2330)
+
+[node name="CircleWall770" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-120, 2280)
+
+[node name="CircleWall771" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-30, 1630)
+
+[node name="CircleWall772" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(30, 1630)
+
+[node name="CircleWall773" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(90, 1630)
+
+[node name="CircleWall774" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(150, 1630)
+
+[node name="CircleWall775" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(210, 1630)
+
+[node name="CircleWall776" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(270, 1630)
+
+[node name="CircleWall777" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-270, 1630)
+
+[node name="CircleWall778" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-210, 1630)
+
+[node name="CircleWall779" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-150, 1630)
+
+[node name="CircleWall780" parent="LevelContainer/Level/Walls/CircleWalls" instance=ExtResource("7_ky7as")]
+position = Vector2(-90, 1630)
+
+[node name="End" parent="LevelContainer/Level" instance=ExtResource("8_puuk8")]
+
+[node name="Shape" type="CollisionShape2D" parent="LevelContainer/Level/End"]
+position = Vector2(0, 3595)
+shape = SubResource("RectangleShape2D_4s7dl")
+debug_color = Color(0, 0.639216, 0.388235, 0.419608)
+
+[node name="Fill" type="Polygon2D" parent="LevelContainer/Level/End"]
+z_index = -2
+color = Color(0, 0.67451, 0.419608, 0.313726)
+polygon = PackedVector2Array(-320, 3490, 320, 3490, 320, 3700, -320, 3700)
+
+[node name="Balls" type="Node2D" parent="."]
+script = ExtResource("7_owjqk")
+
+[node name="Ball" parent="Balls" instance=ExtResource("1_cqm5x")]
+ball_data = SubResource("Resource_62v7b")
+
+[node name="Ball2" parent="Balls" instance=ExtResource("1_cqm5x")]
+position = Vector2(40, -40)
+ball_data = SubResource("Resource_jp456")
+
+[node name="Ball3" parent="Balls" instance=ExtResource("1_cqm5x")]
+position = Vector2(110, -70)
+ball_data = SubResource("Resource_jp456")
+
+[node name="Ball4" parent="Balls" instance=ExtResource("1_cqm5x")]
+position = Vector2(-20, -80)
+ball_data = SubResource("Resource_jp456")
+
+[node name="Ball5" parent="Balls" instance=ExtResource("1_cqm5x")]
+position = Vector2(-70, -90)
+ball_data = SubResource("Resource_jp456")
+
+[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("cam_mode_lbl")]
+zoom = Vector2(0.8, 0.8)
+position_smoothing_speed = 10.0
+script = ExtResource("9_w8ffy")
+cam_mode_lbl = NodePath("../UI/Margins/CamModeLbl")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Margins" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+metadata/_edit_lock_ = true
+
+[node name="CamModeLbl" type="Label" parent="UI/Margins"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Camera Mode"
+
+[node name="HBox" type="HBoxContainer" parent="UI/Margins"]
+layout_mode = 2
+
+[node name="Placements" type="VBoxContainer" parent="UI/Margins/HBox" node_paths=PackedStringArray("balls")]
+layout_mode = 2
+script = ExtResource("8_jkm8m")
+balls = NodePath("../../../../Balls")
+
+[node name="Label" type="Label" parent="UI/Margins/HBox/Placements"]
+layout_mode = 2
+text = "1. Placement"
+
+[node name="Label2" type="Label" parent="UI/Margins/HBox/Placements"]
+layout_mode = 2
+text = "1. Placement"

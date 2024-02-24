@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=4 format=3 uid="uid://dxeyxcwayagbf"]
+
+[ext_resource type="Script" path="res://levels/level_data.gd" id="1_7vmwq"]
+[ext_resource type="Texture2D" uid="uid://ck4f16ub34bx5" path="res://levels/some_plinko/icon_128.png" id="1_cl3q8"]
+[ext_resource type="PackedScene" uid="uid://ck5lcfuyt3ov" path="res://levels/some_plinko/level__some_plinko.tscn" id="1_ws25c"]
+
+[resource]
+script = ExtResource("1_7vmwq")
+icon = ExtResource("1_cl3q8")
+title = "Some Plinko"
+scene = ExtResource("1_ws25c")

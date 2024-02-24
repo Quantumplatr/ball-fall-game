@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://bamxffvl8qjh8"]
+
+[ext_resource type="Script" path="res://menus/save_edit/ball_edit.gd" id="1_o1lrp"]
+[ext_resource type="Texture2D" uid="uid://cs64xko6qb2ht" path="res://ball/ball.png" id="2_q7bxp"]
+
+[node name="BallEdit" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+script = ExtResource("1_o1lrp")
+
+[node name="NameLbl" type="Label" parent="."]
+layout_mode = 2
+text = "Name:"
+
+[node name="NameEdit" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Ball Name"
+
+[node name="ColorLbl" type="Label" parent="."]
+layout_mode = 2
+text = "Main Color:"
+
+[node name="ColorBtn" type="ColorPickerButton" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+text = "     "
+edit_alpha = false
+
+[node name="TrailStartLbl" type="Label" parent="."]
+layout_mode = 2
+text = "Trail Start:"
+
+[node name="StartBtn" type="ColorPickerButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "     "
+
+[node name="TrailEndLbl" type="Label" parent="."]
+layout_mode = 2
+text = "Trail End:"
+
+[node name="EndBtn" type="ColorPickerButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "     "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_q7bxp")
+stretch_mode = 3
+
+[node name="DeleteBtn" type="Button" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Delete"
+
+[connection signal="text_changed" from="NameEdit" to="." method="_on_name_edit_text_changed"]
+[connection signal="color_changed" from="ColorBtn" to="." method="_on_color_btn_color_changed"]
+[connection signal="color_changed" from="StartBtn" to="." method="_on_start_btn_color_changed"]
+[connection signal="color_changed" from="EndBtn" to="." method="_on_end_btn_color_changed"]

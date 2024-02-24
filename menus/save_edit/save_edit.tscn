@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgf8phsy1hbkr"]
+
+[ext_resource type="Script" path="res://menus/save_edit/save_edit.gd" id="1_6t4kv"]
+[ext_resource type="PackedScene" uid="uid://bamxffvl8qjh8" path="res://menus/save_edit/ball_edit.tscn" id="2_1lf6o"]
+
+[node name="SaveEdit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6t4kv")
+
+[node name="Margins" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBox" type="VBoxContainer" parent="Margins"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="TitleRow" type="HBoxContainer" parent="Margins/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="BackBtn" type="Button" parent="Margins/VBox/TitleRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+
+[node name="SaveName" type="LineEdit" parent="Margins/VBox/TitleRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Save Name"
+
+[node name="PlayBtn" type="Button" parent="Margins/VBox/TitleRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Play"
+
+[node name="MainContent" type="VBoxContainer" parent="Margins/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Actions" type="HBoxContainer" parent="Margins/VBox/MainContent"]
+layout_mode = 2
+
+[node name="Balls" type="Label" parent="Margins/VBox/MainContent/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Balls"
+
+[node name="CreateBallBtn" type="Button" parent="Margins/VBox/MainContent/Actions"]
+layout_mode = 2
+text = "Create New Ball"
+
+[node name="SortByName" type="Button" parent="Margins/VBox/MainContent/Actions"]
+visible = false
+layout_mode = 2
+text = "Sort By Name"
+
+[node name="SortByWins" type="Button" parent="Margins/VBox/MainContent/Actions"]
+visible = false
+layout_mode = 2
+text = "Sort By Wins"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margins/VBox/MainContent"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BallsContainer" type="VBoxContainer" parent="Margins/VBox/MainContent/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="BallEdit" parent="Margins/VBox/MainContent/ScrollContainer/BallsContainer" instance=ExtResource("2_1lf6o")]
+layout_mode = 2
+
+[node name="BallEdit2" parent="Margins/VBox/MainContent/ScrollContainer/BallsContainer" instance=ExtResource("2_1lf6o")]
+layout_mode = 2
+
+[node name="ConfirmDelete" type="ConfirmationDialog" parent="."]
+initial_position = 1
+size = Vector2i(339, 100)
+ok_button_text = "Delete"
+dialog_text = "Are you sure you want to delete the ball?"
+
+[connection signal="pressed" from="Margins/VBox/TitleRow/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="text_changed" from="Margins/VBox/TitleRow/SaveName" to="." method="_on_save_name_text_submitted"]
+[connection signal="pressed" from="Margins/VBox/TitleRow/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="Margins/VBox/MainContent/Actions/CreateBallBtn" to="." method="_on_create_ball_btn_pressed"]
+[connection signal="pressed" from="Margins/VBox/MainContent/Actions/SortByName" to="." method="_on_sort_by_name_pressed"]
+[connection signal="pressed" from="Margins/VBox/MainContent/Actions/SortByWins" to="." method="_on_sort_by_wins_pressed"]
+[connection signal="confirmed" from="ConfirmDelete" to="." method="_on_confirm_delete"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuojibjy6vwck"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_dchwj"]
+[ext_resource type="PackedScene" uid="uid://ds1vqtucuy7h2" path="res://areas/start/start.tscn" id="2_c1n0b"]
+[ext_resource type="PackedScene" uid="uid://dhaocfqumbmpk" path="res://areas/end/end.tscn" id="3_03j0e"]
+
+[node name="BaseLevel" type="Node" node_paths=PackedStringArray("start_area", "end_area")]
+script = ExtResource("1_dchwj")
+start_area = NodePath("Start")
+end_area = NodePath("End")
+
+[node name="EndZone" type="Polygon2D" parent="."]
+z_index = -2
+color = Color(0, 0.827451, 0.45098, 0.501961)
+
+[node name="Start" parent="." instance=ExtResource("2_c1n0b")]
+
+[node name="End" parent="." instance=ExtResource("3_03j0e")]
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Circles" type="Node" parent="Walls"]
+
+[node name="Static" type="Node" parent="Walls"]
+
+[node name="Rotating" type="Node" parent="Walls"]
