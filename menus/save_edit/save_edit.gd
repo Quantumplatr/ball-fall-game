@@ -20,6 +20,8 @@ var to_delete = -1 # Index of ball to delete
 func _ready():
 	save_data = SaveManager.get_current_save()
 	update_visuals()
+	
+	play_btn.grab_focus()
 
 # TODO: rename as it's now on change
 func _on_save_name_text_submitted(new_text):

@@ -2,6 +2,7 @@ extends CenterContainer
 
 signal on_pause()
 signal on_play()
+@onready var restart_btn = $Bg/Margins/Btns/RestartBtn
 
 func _ready():
 	hide()
@@ -13,6 +14,7 @@ func _input(event):
 			on_play.emit()
 		else:
 			show()
+			restart_btn.grab_focus()
 			on_pause.emit()
 
 func _on_restart_btn_pressed():

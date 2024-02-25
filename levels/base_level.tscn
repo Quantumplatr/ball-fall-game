@@ -26,3 +26,5 @@ color = Color(0, 0.827451, 0.45098, 0.501961)
 [node name="Rotating" type="Node" parent="Walls"]
 
 [node name="Bouncy" type="Node" parent="Walls"]
+
+[node name="Moving" type="Node" parent="Walls"]

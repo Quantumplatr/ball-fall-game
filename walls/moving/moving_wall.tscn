@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://6xb8gwsw2eck"]
+
+[ext_resource type="Texture2D" uid="uid://b6hq1asafakhc" path="res://rectangle.png" id="1_5clvq"]
+[ext_resource type="Script" path="res://walls/moving/moving_wall_path.gd" id="1_p7sau"]
+[ext_resource type="Script" path="res://walls/moving/moving_wall.gd" id="1_u2aya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frnt8"]
+
+[node name="MovingWall" type="Path2D"]
+script = ExtResource("1_p7sau")
+angle = null
+
+[node name="Follower" type="PathFollow2D" parent="."]
+progress = 24985.6
+
+[node name="Body" type="StaticBody2D" parent="Follower"]
+script = ExtResource("1_u2aya")
+
+[node name="Sprite2D" type="Sprite2D" parent="Follower/Body"]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_5clvq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Follower/Body"]
+shape = SubResource("RectangleShape2D_frnt8")
+debug_color = Color(0.611765, 0.360784, 1, 0.419608)

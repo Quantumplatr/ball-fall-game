@@ -3,6 +3,7 @@ extends Control
 @export var level_datas : Array[LevelData]
 
 @onready var levels = %Levels
+@onready var back_btn = $MarginContainer/VBoxContainer/Title/BackBtn
 
 const LEVEL_SELECT_BTN = preload("res://menus/level_select/level_select_btn.tscn")
 
@@ -18,6 +19,8 @@ func _ready():
 		lvl_btn.lvl_data = lvl
 		lvl_btn.on_level_select.connect(_on_level_select)
 		levels.add_child(lvl_btn)
+	
+	back_btn.grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

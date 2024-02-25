@@ -2421,28 +2421,28 @@ size = Vector2(1, 10)
 
 [node name="RotatingWall" parent="Walls/Rotating" index="0" instance=ExtResource("2_77qt8")]
 position = Vector2(0, 180)
-rotation = 335.332
+rotation = 28.1666
 scale = Vector2(10, 1)
 speed = 10.0
 size = Vector2(10, 1)
 
 [node name="RotatingWall2" parent="Walls/Rotating" index="1" instance=ExtResource("2_77qt8")]
 position = Vector2(-180, 1200)
-rotation = -201.203
+rotation = -16.9
 scale = Vector2(8, 1)
 speed = -6.0
 size = Vector2(8, 1)
 
 [node name="RotatingWall3" parent="Walls/Rotating" index="2" instance=ExtResource("2_77qt8")]
 position = Vector2(180, 1200)
-rotation = 201.203
+rotation = 16.9
 scale = Vector2(8, 1)
 speed = 6.0
 size = Vector2(8, 1)
 
 [node name="RotatingWall4" parent="Walls/Rotating" index="3" instance=ExtResource("2_77qt8")]
 position = Vector2(0, 2750)
-rotation = -199.632
+rotation = -15.3292
 scale = Vector2(8, 1)
 speed = -6.0
 starting_angle = 90
@@ -2450,14 +2450,14 @@ size = Vector2(8, 1)
 
 [node name="RotatingWall5" parent="Walls/Rotating" index="4" instance=ExtResource("2_77qt8")]
 position = Vector2(0, 2750)
-rotation = -201.203
+rotation = -16.9
 scale = Vector2(8, 1)
 speed = -6.0
 size = Vector2(8, 1)
 
 [node name="RotatingWall6" parent="Walls/Rotating" index="5" instance=ExtResource("2_77qt8")]
 position = Vector2(-8.04663e-06, 3020)
-rotation = 202.774
+rotation = 18.4708
 scale = Vector2(8, 1)
 speed = 6.0
 starting_angle = 90
@@ -2465,14 +2465,14 @@ size = Vector2(8, 1)
 
 [node name="RotatingWall7" parent="Walls/Rotating" index="6" instance=ExtResource("2_77qt8")]
 position = Vector2(0, 3020)
-rotation = 201.203
+rotation = 16.9
 scale = Vector2(8, 1)
 speed = 6.0
 size = Vector2(8, 1)
 
 [node name="RotatingWall8" parent="Walls/Rotating" index="7" instance=ExtResource("2_77qt8")]
 position = Vector2(-8.04663e-06, 3280)
-rotation = -400.835
+rotation = -32.2293
 scale = Vector2(8, 1)
 speed = -12.0
 starting_angle = 90
@@ -2480,7 +2480,7 @@ size = Vector2(8, 1)
 
 [node name="RotatingWall9" parent="Walls/Rotating" index="8" instance=ExtResource("2_77qt8")]
 position = Vector2(0, 3280)
-rotation = -402.406
+rotation = -33.8001
 scale = Vector2(8, 1)
 speed = -12.0
 size = Vector2(8, 1)

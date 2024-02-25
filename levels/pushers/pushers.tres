@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://dy85lshoonar2"]
+
+[ext_resource type="PackedScene" uid="uid://do4qlfqhp74nr" path="res://levels/pushers/pushers.tscn" id="1_1oohn"]
+[ext_resource type="Script" path="res://levels/level_data.gd" id="1_sblo8"]
+
+[resource]
+script = ExtResource("1_sblo8")
+title = "Pushers"
+scene = ExtResource("1_1oohn")
+author = "Ethan"

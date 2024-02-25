@@ -1,41 +1,81 @@
-[gd_resource type="Resource" script_class="SavesData" load_steps=17 format=3]
+[gd_resource type="Resource" script_class="SavesData" load_steps=21 format=3]
 
 [ext_resource type="Script" path="res://world_data.gd" id="1_fxh60"]
 [ext_resource type="Script" path="res://saves_data.gd" id="1_gh0b6"]
 [ext_resource type="Script" path="res://ball/ball_data.gd" id="1_nim11"]
 
-[sub_resource type="Resource" id="Resource_8lmqq"]
+[sub_resource type="Resource" id="Resource_5ww31"]
 script = ExtResource("1_nim11")
 name = "Eef"
-main_color = Color(0, 0.831373, 0.654902, 1)
-trail_start_color = Color(0, 0.415686, 0.34902, 1)
-trail_end_color = Color(0.407843, 0.407843, 0.407843, 0)
-wins = 0
+main_color = Color(0, 0.886275, 0.658824, 1)
+trail_start_color = Color(0, 0.698039, 0.356863, 1)
+trail_end_color = Color(0, 0.682353, 0.772549, 1)
+wins = 8
 won_last = false
 inactive = false
 
-[sub_resource type="Resource" id="Resource_cfqfp"]
+[sub_resource type="Resource" id="Resource_k7425"]
 script = ExtResource("1_nim11")
 name = "Carsen"
-main_color = Color(0.854902, 0.576471, 0.0431373, 1)
-trail_start_color = Color(0.854902, 0.407843, 0.0313726, 0.431373)
-trail_end_color = Color(0.843137, 0.156863, 0.156863, 0.168627)
-wins = 0
+main_color = Color(1, 0.752941, 0.00392157, 1)
+trail_start_color = Color(1, 0.631373, 0, 1)
+trail_end_color = Color(1, 0, 0, 1)
+wins = 10
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_evody"]
+script = ExtResource("1_nim11")
+name = "Aspen"
+main_color = Color(0.529412, 0, 0, 1)
+trail_start_color = Color(0.411765, 0, 0, 1)
+trail_end_color = Color(0.505882, 0, 0.545098, 1)
+wins = 12
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_x0ddj"]
+script = ExtResource("1_nim11")
+name = "ekaJ"
+main_color = Color(0, 0, 0, 1)
+trail_start_color = Color(0, 0, 0, 1)
+trail_end_color = Color(0, 0, 0, 1)
+wins = 12
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_ojal1"]
+script = ExtResource("1_nim11")
+name = "Tranny"
+main_color = Color(0.00392157, 0.329412, 0, 1)
+trail_start_color = Color(0, 0.435294, 0.0862745, 1)
+trail_end_color = Color(0.027451, 0, 0.333333, 1)
+wins = 9
+won_last = false
+inactive = false
+
+[sub_resource type="Resource" id="Resource_8j12r"]
+script = ExtResource("1_nim11")
+name = "Jesse"
+main_color = Color(0.054902, 0.643137, 0.270588, 1)
+trail_start_color = Color(0.054902, 0.654902, 0.270588, 1)
+trail_end_color = Color(0.054902, 0.643137, 0.270588, 0.466667)
+wins = 14
 won_last = false
 inactive = false
 
 [sub_resource type="Resource" id="Resource_lfqiw"]
 script = ExtResource("1_fxh60")
 name = "Game Night!!!"
-balls = Array[ExtResource("1_nim11")]([SubResource("Resource_8lmqq"), SubResource("Resource_cfqfp")])
+balls = Array[ExtResource("1_nim11")]([SubResource("Resource_5ww31"), SubResource("Resource_k7425"), SubResource("Resource_evody"), SubResource("Resource_x0ddj"), SubResource("Resource_ojal1"), SubResource("Resource_8j12r")])
 
 [sub_resource type="Resource" id="Resource_xp4y4"]
 script = ExtResource("1_nim11")
 name = "A"
 main_color = Color(1, 0, 0, 1)
-trail_start_color = Color(1, 0, 0, 0.5)
+trail_start_color = Color(1, 0, 0, 0.501961)
 trail_end_color = Color(1, 0, 0, 0)
-wins = 34
+wins = 35
 won_last = false
 inactive = false
 
@@ -75,7 +115,7 @@ name = "E"
 main_color = Color(0.709804, 0, 1, 1)
 trail_start_color = Color(0, 0, 0, 1)
 trail_end_color = Color(0, 0, 0, 1)
-wins = 4
+wins = 5
 won_last = false
 inactive = false
 
@@ -85,7 +125,7 @@ name = "F"
 main_color = Color(0.788235, 0.337255, 0.45098, 1)
 trail_start_color = Color(0, 0, 0, 1)
 trail_end_color = Color(0, 0, 0, 1)
-wins = 3
+wins = 5
 won_last = false
 inactive = false
 
@@ -100,7 +140,7 @@ name = "Ethan"
 main_color = Color(0.0509804, 0.737255, 0.301961, 1)
 trail_start_color = Color(0.12549, 0.721569, 0.141176, 0.454902)
 trail_end_color = Color(0.580392, 0.0901961, 0.392157, 0.74902)
-wins = 2
+wins = 3
 won_last = false
 inactive = false
 
@@ -110,7 +150,7 @@ name = "Jake"
 main_color = Color(0.415686, 0, 0, 1)
 trail_start_color = Color(1, 1, 1, 1)
 trail_end_color = Color(0.2, 0, 0, 1)
-wins = 6
+wins = 8
 won_last = false
 inactive = false
 

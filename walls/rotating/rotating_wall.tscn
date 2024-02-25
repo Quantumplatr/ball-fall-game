@@ -9,7 +9,7 @@ bounce = 0.5
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5sfv"]
 
 [node name="RotatingWall" type="AnimatableBody2D"]
-rotation = 19.2999
+rotation = 10.5667
 physics_material_override = SubResource("PhysicsMaterial_76e7c")
 script = ExtResource("1_yyh2s")
 
@@ -20,3 +20,4 @@ texture = ExtResource("2_a55iw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_w5sfv")
+debug_color = Color(0, 0.615686, 0.588235, 0.419608)

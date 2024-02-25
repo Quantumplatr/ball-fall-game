@@ -17,3 +17,6 @@ func _on_name_pressed():
 
 func _on_delete_pressed():
 	on_delete_pressed.emit(get_index())
+
+func focus():
+	name_btn.grab_focus()

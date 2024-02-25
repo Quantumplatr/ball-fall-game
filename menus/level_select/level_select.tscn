@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6puu81p3ol2g"]
+[gd_scene load_steps=8 format=3 uid="uid://6puu81p3ol2g"]
 
 [ext_resource type="Script" path="res://menus/level_select/level_select.gd" id="1_loyla"]
 [ext_resource type="Resource" uid="uid://dxeyxcwayagbf" path="res://levels/some_plinko/level__some_plinko.tres" id="2_yorus"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxwyghdvptfn7" path="res://menus/level_select/level_select_btn.tscn" id="3_uiy7p"]
 [ext_resource type="Resource" uid="uid://bm07r2627runt" path="res://levels/big_circles/level__big_circles.tres" id="4_8gfyk"]
 [ext_resource type="Resource" uid="uid://bwdynmjudf80v" path="res://levels/bounce_house/bounce_house.tres" id="5_c01l8"]
+[ext_resource type="Resource" uid="uid://dy85lshoonar2" path="res://levels/pushers/pushers.tres" id="6_hu1cw"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -15,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_loyla")
-level_datas = Array[Resource("res://levels/level_data.gd")]([ExtResource("2_yorus"), ExtResource("3_85qxx"), ExtResource("4_8gfyk"), ExtResource("5_c01l8")])
+level_datas = Array[Resource("res://levels/level_data.gd")]([ExtResource("2_yorus"), ExtResource("3_85qxx"), ExtResource("4_8gfyk"), ExtResource("5_c01l8"), ExtResource("6_hu1cw")])
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

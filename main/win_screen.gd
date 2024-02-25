@@ -6,6 +6,7 @@ func _ready():
 	
 @onready var rankings = %Rankings
 @onready var game_over_lbl = $Bg/Margins/VBox/GameOverLbl
+@onready var play_again_btn = $Bg/Margins/VBox/Actions/PlayAgainBtn
 
 func _on_results_on_game_over(results: Array[Ball]):
 	# Clear rankings
@@ -33,6 +34,7 @@ func _on_results_on_game_over(results: Array[Ball]):
 		game_over_lbl.text = "%s Won!" % [results[0].ball_data.name]
 	
 	show()
+	play_again_btn.grab_focus()
 
 
 func _on_play_again_btn_pressed():

@@ -11,6 +11,7 @@ var to_delete = -1 # Index of save to delete
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_saves_list()
+	$"Center/VBox/HBoxContainer/New Save".grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
